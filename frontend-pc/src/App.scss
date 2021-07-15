@@ -1,0 +1,15 @@
+@import "../scss/mixins";
+
+body {
+  background-color: #00a991;
+}
+
+html,body, #root, #root-container {
+  height: 100%;
+}
+
+#root-container {
+  display: flex;
+  @include justifyContent(center);
+  @include alignItems(center);
+}

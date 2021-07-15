@@ -1,0 +1,17 @@
+@import "../../../../scss/mixins";
+
+$phoneContentBottomRadius: 26px;
+
+.phoneContent {
+  height: 100%;
+  @include borderBottomRightRadius($phoneContentBottomRadius);
+  @include borderBottomLeftRadius($phoneContentBottomRadius);
+
+  &.on {
+    background-color: #fff;
+  }
+
+  &.off {
+    background-color: #000;
+  }
+}

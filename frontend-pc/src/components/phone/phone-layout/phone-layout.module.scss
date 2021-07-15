@@ -1,0 +1,9 @@
+@import "../../../../scss/colors";
+@import "../../../../scss/mixins";
+
+.phoneLayout {
+  @include boxShadow(5px 2px 0px $phone-edge-color-darker);
+  position: relative;
+  display: flex;
+  @include flexDirection(column);
+}

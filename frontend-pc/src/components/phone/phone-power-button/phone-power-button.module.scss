@@ -1,0 +1,22 @@
+@import "../../../../scss/mixins";
+@import "../../../../scss/colors";
+
+$powerButtonRadius: 5px;
+
+.phonePowerButton {
+  position: absolute;
+  right: -18px;
+  top: 65px;
+  width: 7px;
+  height: 25px;
+  background: $phone-edge-color-darker;
+  @include borderTopRightRadius($powerButtonRadius);
+  @include borderBottomRightRadius($powerButtonRadius);
+
+  &:hover {
+    cursor: pointer;
+    background-color: $phone-edge-color;
+    @include transition(0.5s);
+    border: 1px solid $phone-edge-color-darker;
+  }
+}

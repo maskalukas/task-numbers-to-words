@@ -1,0 +1,63 @@
+@mixin justifyContent($value) {
+  justify-content: $value;
+  -webkit-justify-content: $value;
+}
+
+@mixin alignContent($value) {
+  align-content: $value;
+  -webkit-align-content: $value;
+}
+
+
+@mixin alignItems($value) {
+  align-items: $value;
+  -webkit-align-items: $value;
+}
+
+
+@mixin borderTopLeftRadius($value) {
+  border-top-left-radius: $value;
+  -webkit-border-top-left-radius: $value;
+}
+
+@mixin borderTopRightRadius($value) {
+  border-top-right-radius: $value;
+  -webkit-border-top-right-radius: $value;
+}
+
+@mixin borderBottomRightRadius($value) {
+  border-bottom-right-radius: $value;
+  -webkit-border-bottom-right-radius: $value;
+}
+
+@mixin borderBottomLeftRadius($value) {
+  border-bottom-left-radius: $value;
+  -webkit-border-bottom-left-radius: $value;
+}
+
+@mixin borderRadius($value) {
+  border-radius: $value;
+  -moz-border-radius: $value;
+  -webkit-border-radius: $value;
+}
+
+@mixin boxShadow($value) {
+  box-shadow: $value;
+  -moz-box-shadow: $value;
+  -o-box-shadow: $value;
+  -webkit-box-shadow: $value;
+}
+
+@mixin flexDirection($value) {
+  flex-direction: $value;
+  -ms-flex-direction: $value;
+  -webkit-flex-direction: $value;
+}
+
+@mixin transition($value) {
+  transition: $value;
+  -moz-transition: $value;
+  -o-transition: $value;
+  -webkit-transition: $value;
+}
+

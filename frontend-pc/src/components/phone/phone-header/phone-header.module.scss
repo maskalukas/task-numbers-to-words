@@ -1,0 +1,23 @@
+@import "../../../../scss/mixins";
+@import "../../../../scss/colors";
+
+
+$phoneHeaderBorderRadius: 24px;
+
+.phoneHeader {
+  background-color: $phone-edge-color;
+  height: 34px;
+  width: 100%;
+  @include borderTopLeftRadius($phoneHeaderBorderRadius);
+  @include borderTopRightRadius($phoneHeaderBorderRadius);
+  @include justifyContent(center);
+  @include alignItems(center);
+  display: flex;
+}
+
+.phoneSignalCircle {
+  width: 10px;
+  height: 10px;
+  @include borderRadius(10px);
+  background-color: $phone-edge-color-lighter;
+}
