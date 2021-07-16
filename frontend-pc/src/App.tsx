@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import {PhoneLayout} from "./components/phone/phone-layout/phone-layout";
+import NotificationSms from "./utils/notification-sms";
 
 function App() {
 

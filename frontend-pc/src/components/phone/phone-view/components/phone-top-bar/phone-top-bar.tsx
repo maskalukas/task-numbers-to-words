@@ -1,6 +1,6 @@
 import phoneTopBarCss from "./phone-top-bar.module.css";
 import { useEffect, useState} from "react";
-import {faChevronLeft, faWifi} from "@fortawesome/free-solid-svg-icons";
+import {faChevronLeft, faChevronUp, faPlane, faSignal, faWifi} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import PhoneTopBarBrightnessSlider from "./components/phone-top-bar-brightness-slider/phone-top-bar-brightness-slider";
 import PhoneTopBarButton from "./components/phone-top-bar-button/phone-top-bar-button";
@@ -62,8 +62,16 @@ const PhoneTopBar = () => {
     return (
         <div className={phoneTopBarCss.phoneTopBar} style={{ height: height }} onMouseDown={onMouseDown} >
             <div className={ phoneTopBarCss.phoneTopBarMainLine } style={{ height: topBarHeightDefault }}>
-                <span>{ time }</span>
-                <FontAwesomeIcon icon={faWifi}/>
+                <div>
+                    <span>{ time }</span>
+                </div>
+                <div>
+                    { !phoneGeneralState.airplane
+                      ? <FontAwesomeIcon icon={faWifi}/>
+                      : <FontAwesomeIcon icon={faPlane}/>
+                    }
+                    <FontAwesomeIcon icon={faSignal}/>
+                </div>
             </div>
             {
                 expanded && contentShowed &&
@@ -73,6 +81,10 @@ const PhoneTopBar = () => {
                         <PhoneTopBarButton iconName="volume-up" isActivated={phoneGeneralState.volume} func={volumeChangeState}></PhoneTopBarButton>
                     </div>
                     <PhoneTopBarBrightnessSlider></PhoneTopBarBrightnessSlider>
+
+                    <div className={phoneTopBarCss.phoneTopBarExpendedCloseBtn}>
+                        <FontAwesomeIcon icon={faChevronUp} />
+                    </div>
                 </div>
             }
         </div>
