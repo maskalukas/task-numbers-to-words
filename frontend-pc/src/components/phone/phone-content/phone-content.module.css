@@ -1,0 +1,15 @@
+.phoneContent {
+  height: 100%;
+  border-bottom-right-radius: 26px;
+  -webkit-border-bottom-right-radius: 26px;
+  border-bottom-left-radius: 26px;
+  -webkit-border-bottom-left-radius: 26px;
+}
+.phoneContent.on {
+  background-color: #fff;
+}
+.phoneContent.off {
+  background-color: #272727;
+}
+
+/*# sourceMappingURL=phone-content.module.css.map */

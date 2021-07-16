@@ -1,0 +1,13 @@
+.phoneLayout {
+  box-shadow: 5px 2px 0px #3f3f3f;
+  -moz-box-shadow: 5px 2px 0px #3f3f3f;
+  -o-box-shadow: 5px 2px 0px #3f3f3f;
+  -webkit-box-shadow: 5px 2px 0px #3f3f3f;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+}
+
+/*# sourceMappingURL=phone-layout.module.css.map */
