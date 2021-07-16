@@ -2,7 +2,7 @@ import phonePowerButtonCss from "./phone-power-button.module.css";
 import {useDispatch, useSelector} from "react-redux";
 import {IReducersState} from "../../../redux/store";
 import {TGeneralState} from "../../../redux/interfaces";
-import {setTurnedOff, setTurnedOn} from "../../../redux/slices/general-phone/general-phone-slice";
+import {setTurned} from "../../../redux/slices/general-phone/general-phone-slice";
 import {useState} from "react";
 
 const PhonePowerButton = () => {
@@ -15,7 +15,7 @@ const PhonePowerButton = () => {
     const changePhoneIsTurned = () => {
         setClicked(true);
 
-        phoneGeneralState.isTurnedOn ? dispatch(setTurnedOff()) : dispatch(setTurnedOn());
+        phoneGeneralState.isTurnedOn ? dispatch(setTurned(false)) : dispatch(setTurned(true));
         setTimeout(() => {
             setClicked(false);
         },750)

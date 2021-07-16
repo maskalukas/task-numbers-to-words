@@ -2,17 +2,24 @@
 
 .phoneTopBarButton {
   @include borderRadius(25px);
-  background-color: #0075ff;
   display: inline-flex;
   padding: 10px;
   @include transition(0.5s);
 
-  > svg {
+  &:hover {
+    @include transform(scale(1.15));
+    cursor: pointer;
+  }
+
+  &.isActivated {
+    background-color: #0075ff;
     color: #002858
   }
 
-  &:hover {
-    @include transform(scale(1.15));
-    cursor: pointerš;
+  &.isDeactivated {
+    background-color: #aaaaaa;
+    > svg {
+      color: #636363;
+    }
   }
 }

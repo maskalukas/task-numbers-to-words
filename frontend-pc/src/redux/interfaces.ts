@@ -1,4 +1,5 @@
 export type TGeneralState = {
     isTurnedOn: boolean;
-    brightness: number
+    brightness: number,
+    airplane: boolean;
 }

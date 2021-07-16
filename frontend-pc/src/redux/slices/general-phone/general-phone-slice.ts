@@ -3,25 +3,26 @@ import {TGeneralState} from "../../interfaces";
 
 const initialState: TGeneralState = {
     isTurnedOn: false,
-    brightness: 1
+    brightness: 1,
+    airplane: false
 }
 
 const generalPhoneSlice = createSlice({
     name: "general",
     initialState: initialState,
     reducers: {
-        setTurnedOn(state: TGeneralState, action: PayloadAction) {
-            state.isTurnedOn = true
-        },
-        setTurnedOff(state: TGeneralState, action: PayloadAction) {
-            state.isTurnedOn = false;
+        setTurned(state: TGeneralState, action: PayloadAction<boolean>) {
+            state.isTurnedOn = action.payload
         },
         setBrightness(state: TGeneralState, action: PayloadAction<number>) {
             state.brightness = action.payload;
+        },
+        setAirplane(state: TGeneralState, action: PayloadAction<boolean>) {
+            state.airplane = action.payload;
         }
     }
 });
 
-export const { setTurnedOn, setTurnedOff, setBrightness } = generalPhoneSlice.actions;
+export const { setTurned, setBrightness, setAirplane } = generalPhoneSlice.actions;
 export default generalPhoneSlice.reducer;
 

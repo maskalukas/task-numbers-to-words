@@ -4,6 +4,10 @@ import {faChevronLeft, faWifi} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import PhoneTopBarBrightnessSlider from "./components/phone-top-bar-brightness-slider/phone-top-bar-brightness-slider";
 import PhoneTopBarButton from "./components/phone-top-bar-button/phone-top-bar-button";
+import {TGeneralState} from "../../../../../redux/interfaces";
+import {useDispatch, useSelector} from "react-redux";
+import {IReducersState} from "../../../../../redux/store";
+import {setAirplane} from "../../../../../redux/slices/general-phone/general-phone-slice";
 
 const getCurrentTime = (): string => {
     const CurrentDate = new Date();
@@ -17,6 +21,9 @@ const PhoneTopBar = () => {
     const [height, setHeight] = useState(topBarHeightDefault);
     const [contentShowed, setContentShowed] = useState(false);
     const [time, setTime] = useState(getCurrentTime());
+
+    const phoneGeneralState: TGeneralState = useSelector((state: IReducersState) => state.generalState);
+    const dispatch = useDispatch();
 
 
     useEffect(() => {
@@ -43,6 +50,10 @@ const PhoneTopBar = () => {
         }
     }
 
+    const airplaneChangeState = (e: any) => {
+        dispatch(setAirplane(!phoneGeneralState.airplane));
+    }
+
 
     return (
         <div className={phoneTopBarCss.phoneTopBar} style={{ height: height }} onMouseDown={onMouseDown} >
@@ -54,7 +65,7 @@ const PhoneTopBar = () => {
                 expanded && contentShowed &&
                 <div className={phoneTopBarCss.phoneTopBarExpandedContent}>
                     <div style={{ marginBottom: "10px" }}>
-                        <PhoneTopBarButton iconName="plane"></PhoneTopBarButton>
+                        <PhoneTopBarButton iconName="plane" isActivated={phoneGeneralState.airplane} func={airplaneChangeState}></PhoneTopBarButton>
                     </div>
                     <PhoneTopBarBrightnessSlider></PhoneTopBarBrightnessSlider>
                 </div>
