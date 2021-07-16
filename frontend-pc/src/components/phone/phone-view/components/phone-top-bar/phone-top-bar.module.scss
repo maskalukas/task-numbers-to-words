@@ -2,18 +2,29 @@
 @import "../../../../../../scss/colors";
 
 .phoneTopBar {
-  height: 17px;
   width: 100%;
+  position: absolute;
+  top: 0;
   background: #ececec;
   @include boxSizing(border-box);
   font-size: 12px;
   font-weight: 500;
   padding: 0 10px;
-  display: flex;
-  @include justifyContent(space-between);
-  @include alignItems(center);
+  @include transition(0.5s);
+
+  &:hover {
+    cursor: pointer;
+    background-color: #d7d7d7;
+  }
 
   > * {
     color: $phone-top-bar-items-color;
   }
+}
+
+.phoneTopBarMainLine {
+  height: 17px;
+  display: flex;
+  @include justifyContent(space-between);
+  @include alignItems(center);
 }

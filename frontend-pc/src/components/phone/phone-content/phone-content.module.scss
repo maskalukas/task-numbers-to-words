@@ -5,6 +5,7 @@ $phoneContentBottomRadius: 26px;
 .phoneContent {
   height: 100%;
   display: flex;
+  position: relative;
   @include flexDirection(column);
   @include borderBottomRightRadius($phoneContentBottomRadius);
   @include borderBottomLeftRadius($phoneContentBottomRadius);

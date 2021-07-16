@@ -1,6 +1,7 @@
 .phoneContent {
   height: 100%;
   display: flex;
+  position: relative;
   flex-direction: column;
   -ms-flex-direction: column;
   -webkit-flex-direction: column;

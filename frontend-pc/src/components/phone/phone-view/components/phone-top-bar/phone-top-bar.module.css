@@ -1,6 +1,7 @@
 .phoneTopBar {
-  height: 17px;
   width: 100%;
+  position: absolute;
+  top: 0;
   background: #ececec;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -8,14 +9,26 @@
   font-size: 12px;
   font-weight: 500;
   padding: 0 10px;
+  transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+.phoneTopBar:hover {
+  cursor: pointer;
+  background-color: #d7d7d7;
+}
+.phoneTopBar > * {
+  color: #3f3f3f;
+}
+
+.phoneTopBarMainLine {
+  height: 17px;
   display: flex;
   justify-content: space-between;
   -webkit-justify-content: space-between;
   align-items: center;
   -webkit-align-items: center;
-}
-.phoneTopBar > * {
-  color: #3f3f3f;
 }
 
 /*# sourceMappingURL=phone-top-bar.module.css.map */
