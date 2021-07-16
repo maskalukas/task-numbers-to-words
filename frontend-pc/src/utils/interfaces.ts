@@ -1,3 +1,3 @@
-export interface INotificationSms {
-    runSong(): Promise<any>;
+export interface ISound {
+    runSound(): Promise<any>;
 }

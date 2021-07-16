@@ -13,6 +13,7 @@
   > * {
     color: $phone-top-bar-items-color;
   }
+
 }
 
 .phoneTopBarMainLine {
@@ -26,7 +27,15 @@
 
   &:hover {
     cursor: pointer;
-    background-color: #d7d7d7;
+  }
+}
+
+.phoneTopBarMainLineRightPart {
+  display: flex;
+  @include alignItems(center);
+
+  > * {
+    margin-left: 5px;
   }
 }
 
@@ -44,10 +53,29 @@
 
 .phoneTopBarExpendedCloseBtn {
   position: absolute;
-  bottom: 0;
+  bottom: -12px;
   left: 50%;
   background: #838383;
   color: #fff;
   padding: 5px 8px;
-  border-radius: 23px;
+  @include transform(translate(-50%, 0));
+  @include borderRadius(25px);
+  @include transition(0.5s);
+
+  &:hover {
+    cursor: pointer;
+    @include transform(translate(-50%, 0) scale(1.1));
+  }
 }
+
+.phoneTopBarMainLineFakeBg {
+  position: absolute;
+  width: 100%;
+  height: 17px;
+  left: 0;
+  &:hover {
+    background-color: #acacac4a;
+  }
+}
+
+

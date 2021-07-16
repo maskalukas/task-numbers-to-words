@@ -8,6 +8,9 @@ import {TGeneralState} from "../../../../../redux/interfaces";
 import {useDispatch, useSelector} from "react-redux";
 import {IReducersState} from "../../../../../redux/store";
 import {setAirplane, setVolume} from "../../../../../redux/slices/general-phone/general-phone-slice";
+import PhoneTopBarNewMessagesIcon from "./components/phone-top-bar-new-message-icon/phone-top-bar-new-messages-icon";
+import React from "react";
+import Sound from "../../../../../utils/sound";
 
 const getCurrentTime = (): string => {
     const CurrentDate = new Date();
@@ -55,22 +58,33 @@ const PhoneTopBar = () => {
     }
 
     const volumeChangeState = (e: any) => {
-        dispatch(setVolume(!phoneGeneralState.volume));
+        const newVolumeState = !phoneGeneralState.volume;
+        dispatch(setVolume(newVolumeState));
+
+        if(newVolumeState) {
+            const sound = new Sound();
+            sound.runSound();
+        }
     }
 
 
     return (
         <div className={phoneTopBarCss.phoneTopBar} style={{ height: height }} onMouseDown={onMouseDown} >
             <div className={ phoneTopBarCss.phoneTopBarMainLine } style={{ height: topBarHeightDefault }}>
+                <div className={phoneTopBarCss.phoneTopBarMainLineFakeBg}></div>
                 <div>
                     <span>{ time }</span>
                 </div>
-                <div>
+                <div className={phoneTopBarCss.phoneTopBarMainLineRightPart}>
+                    <PhoneTopBarNewMessagesIcon></PhoneTopBarNewMessagesIcon>
+
                     { !phoneGeneralState.airplane
-                      ? <FontAwesomeIcon icon={faWifi}/>
-                      : <FontAwesomeIcon icon={faPlane}/>
+                      ? <React.Fragment>
+                            <FontAwesomeIcon icon={faWifi}/>
+                            <FontAwesomeIcon icon={faSignal}/>
+                        </React.Fragment>
+                        : <FontAwesomeIcon icon={faPlane}/>
                     }
-                    <FontAwesomeIcon icon={faSignal}/>
                 </div>
             </div>
             {
