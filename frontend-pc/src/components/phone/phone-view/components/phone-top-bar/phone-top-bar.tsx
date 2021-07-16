@@ -1,8 +1,9 @@
 import phoneTopBarCss from "./phone-top-bar.module.css";
-import {BaseSyntheticEvent, SyntheticEvent, useEffect, useState} from "react";
+import { useEffect, useState} from "react";
 import {faChevronLeft, faWifi} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {phoneContentId} from "../../../../../constants/elements-ids";
+import PhoneTopBarBrightnessSlider from "./components/phone-top-bar-brightness-slider/phone-top-bar-brightness-slider";
+import PhoneTopBarButton from "./components/phone-top-bar-button/phone-top-bar-button";
 
 const getCurrentTime = (): string => {
     const CurrentDate = new Date();
@@ -51,10 +52,11 @@ const PhoneTopBar = () => {
             </div>
             {
                 expanded && contentShowed &&
-                <div>
-                    <div>
-                        <input type="range" />
+                <div className={phoneTopBarCss.phoneTopBarExpandedContent}>
+                    <div style={{ marginBottom: "10px" }}>
+                        <PhoneTopBarButton iconName="plane"></PhoneTopBarButton>
                     </div>
+                    <PhoneTopBarBrightnessSlider></PhoneTopBarBrightnessSlider>
                 </div>
             }
         </div>

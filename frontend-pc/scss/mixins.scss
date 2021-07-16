@@ -66,3 +66,11 @@
   -moz-box-sizing: $value;
   -webkit-box-sizing: $value;
 }
+
+@mixin transform($value) {
+  transform: $value;
+  -moz-transform: $value;
+  -o-transform: $value;
+  -ms-transform: $value;
+}
+

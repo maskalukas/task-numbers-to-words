@@ -1,0 +1,25 @@
+@charset "UTF-8";
+.phoneTopBarButton {
+  border-radius: 25px;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  background-color: #0075ff;
+  display: inline-flex;
+  padding: 10px;
+  transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+.phoneTopBarButton > svg {
+  color: #002858;
+}
+.phoneTopBarButton:hover {
+  transform: scale(1.15);
+  -moz-transform: scale(1.15);
+  -o-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  cursor: pointerš;
+}
+
+/*# sourceMappingURL=phone-top-bar-button.module.css.map */

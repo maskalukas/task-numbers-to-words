@@ -3,20 +3,12 @@
   position: absolute;
   top: 0;
   background: #ececec;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   font-size: 12px;
   font-weight: 500;
-  padding: 0 10px;
   transition: 0.5s;
   -moz-transition: 0.5s;
   -o-transition: 0.5s;
   -webkit-transition: 0.5s;
-}
-.phoneTopBar:hover {
-  cursor: pointer;
-  background-color: #d7d7d7;
 }
 .phoneTopBar > * {
   color: #3f3f3f;
@@ -29,6 +21,22 @@
   -webkit-justify-content: space-between;
   align-items: center;
   -webkit-align-items: center;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.phoneTopBarMainLine:hover {
+  cursor: pointer;
+  background-color: #d7d7d7;
+}
+
+.phoneTopBarExpandedContent {
+  padding: 0 10px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 /*# sourceMappingURL=phone-top-bar.module.css.map */

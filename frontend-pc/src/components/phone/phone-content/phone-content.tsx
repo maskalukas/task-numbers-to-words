@@ -11,7 +11,12 @@ const PhoneContent = () => {
     const phoneGeneralState: TGeneralState = useSelector((state: IReducersState) => state.generalState);
 
     return (
-        <div id={phoneContentId} className={` ${phoneContentCss.phoneContent} ${ phoneGeneralState.isTurnedOn ? phoneContentCss.on : phoneContentCss.off  } `}>
+        <div id={phoneContentId}
+             className={` 
+             ${phoneContentCss.phoneContent} 
+             ${ phoneGeneralState.isTurnedOn ? phoneContentCss.on : phoneContentCss.off} 
+             `}
+             style={{ filter: `brightness(${phoneGeneralState.brightness})` }}>
 
             {phoneGeneralState.isTurnedOn &&
                 <React.Fragment>

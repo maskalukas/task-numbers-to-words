@@ -1,0 +1,7 @@
+@import "../scss/mixins";
+
+.centerVertical {
+  @include alignItems(center);
+  display: flex;
+}
+
