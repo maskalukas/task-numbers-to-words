@@ -34,3 +34,10 @@
   padding: 0 10px;
   @include boxSizing(border-box);
 }
+
+.phoneTopBarButtonsRow {
+  margin-bottom: 10px;
+  > div {
+    margin: 0 3px;
+  }
+}

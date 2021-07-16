@@ -39,4 +39,11 @@
   -webkit-box-sizing: border-box;
 }
 
+.phoneTopBarButtonsRow {
+  margin-bottom: 10px;
+}
+.phoneTopBarButtonsRow > div {
+  margin: 0 3px;
+}
+
 /*# sourceMappingURL=phone-top-bar.module.css.map */

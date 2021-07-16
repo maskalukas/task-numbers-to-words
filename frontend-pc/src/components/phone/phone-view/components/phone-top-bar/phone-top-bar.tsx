@@ -7,7 +7,7 @@ import PhoneTopBarButton from "./components/phone-top-bar-button/phone-top-bar-b
 import {TGeneralState} from "../../../../../redux/interfaces";
 import {useDispatch, useSelector} from "react-redux";
 import {IReducersState} from "../../../../../redux/store";
-import {setAirplane} from "../../../../../redux/slices/general-phone/general-phone-slice";
+import {setAirplane, setVolume} from "../../../../../redux/slices/general-phone/general-phone-slice";
 
 const getCurrentTime = (): string => {
     const CurrentDate = new Date();
@@ -54,6 +54,10 @@ const PhoneTopBar = () => {
         dispatch(setAirplane(!phoneGeneralState.airplane));
     }
 
+    const volumeChangeState = (e: any) => {
+        dispatch(setVolume(!phoneGeneralState.volume));
+    }
+
 
     return (
         <div className={phoneTopBarCss.phoneTopBar} style={{ height: height }} onMouseDown={onMouseDown} >
@@ -64,8 +68,9 @@ const PhoneTopBar = () => {
             {
                 expanded && contentShowed &&
                 <div className={phoneTopBarCss.phoneTopBarExpandedContent}>
-                    <div style={{ marginBottom: "10px" }}>
+                    <div className={ phoneTopBarCss.phoneTopBarButtonsRow }>
                         <PhoneTopBarButton iconName="plane" isActivated={phoneGeneralState.airplane} func={airplaneChangeState}></PhoneTopBarButton>
+                        <PhoneTopBarButton iconName="volume-up" isActivated={phoneGeneralState.volume} func={volumeChangeState}></PhoneTopBarButton>
                     </div>
                     <PhoneTopBarBrightnessSlider></PhoneTopBarBrightnessSlider>
                 </div>
