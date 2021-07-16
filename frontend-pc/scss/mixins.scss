@@ -61,3 +61,8 @@
   -webkit-transition: $value;
 }
 
+@mixin boxSizing($value) {
+  box-sizing: $value;
+  -moz-box-sizing: $value;
+  -webkit-box-sizing: $value;
+}

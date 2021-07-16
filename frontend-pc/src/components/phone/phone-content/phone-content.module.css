@@ -1,5 +1,9 @@
 .phoneContent {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
   border-bottom-right-radius: 26px;
   -webkit-border-bottom-right-radius: 26px;
   border-bottom-left-radius: 26px;

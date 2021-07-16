@@ -1,0 +1,21 @@
+.phoneTopBar {
+  height: 17px;
+  width: 100%;
+  background: #ececec;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  align-items: center;
+  -webkit-align-items: center;
+}
+.phoneTopBar > * {
+  color: #3f3f3f;
+}
+
+/*# sourceMappingURL=phone-top-bar.module.css.map */

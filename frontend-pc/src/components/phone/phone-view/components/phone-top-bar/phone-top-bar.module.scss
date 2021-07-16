@@ -1,0 +1,19 @@
+@import "../../../../../../scss/mixins";
+@import "../../../../../../scss/colors";
+
+.phoneTopBar {
+  height: 17px;
+  width: 100%;
+  background: #ececec;
+  @include boxSizing(border-box);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0 10px;
+  display: flex;
+  @include justifyContent(space-between);
+  @include alignItems(center);
+
+  > * {
+    color: $phone-top-bar-items-color;
+  }
+}

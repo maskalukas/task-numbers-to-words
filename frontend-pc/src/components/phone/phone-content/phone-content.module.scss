@@ -4,6 +4,8 @@ $phoneContentBottomRadius: 26px;
 
 .phoneContent {
   height: 100%;
+  display: flex;
+  @include flexDirection(column);
   @include borderBottomRightRadius($phoneContentBottomRadius);
   @include borderBottomLeftRadius($phoneContentBottomRadius);
 
@@ -15,3 +17,4 @@ $phoneContentBottomRadius: 26px;
     background-color: #272727;
   }
 }
+
