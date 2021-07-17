@@ -1,12 +1,13 @@
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {ActionCreatorWithPayload, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import { TGeneralState, } from "../../interfaces";
 import {volumeInitial, volumeMethods} from "../../core/general/volume";
 import {batteryInitial, batteryMethods} from "../../core/general/battery";
 import {airplaneInitial, airplaneMethods} from "../../core/general/airplane";
 import {brightnessInitial, brightnessMethods} from "../../core/general/brightness";
+import {powerInitial, powerMethods} from "../../core/general/power";
 
 const initialState: TGeneralState = {
-    isTurnedOn: false,
+    power: powerInitial,
     brightness: brightnessInitial,
     airplane: airplaneInitial,
     volume: volumeInitial,
@@ -18,9 +19,9 @@ const generalPhoneSlice = createSlice({
     name: "general",
     initialState: initialState,
     reducers: {
-        setTurned(state: TGeneralState, action: PayloadAction<boolean>) {
-            state.isTurnedOn = action.payload
-        },
+        // power
+        setPowerOn: powerMethods.setOn,
+        setPowerOff: powerMethods.setOff,
         // brightness,
         setBrightness: brightnessMethods.setBrightness,
         // airplane
@@ -34,7 +35,7 @@ const generalPhoneSlice = createSlice({
     }
 });
 
-export const generalStoreActions = {
+export const generalStoreActions  = {
     battery: {
         changeIsCharging: generalPhoneSlice.actions.batteryChangeIsCharging
     },
@@ -50,7 +51,8 @@ export const generalStoreActions = {
         setBrightness: generalPhoneSlice.actions.setBrightness
     },
     power: {
-        setTurned: generalPhoneSlice.actions.setTurned
+        setOn: generalPhoneSlice.actions.setPowerOn,
+        setOff: generalPhoneSlice.actions.setPowerOff
     }
 }
 export default generalPhoneSlice.reducer;

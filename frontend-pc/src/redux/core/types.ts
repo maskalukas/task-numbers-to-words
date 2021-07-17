@@ -18,3 +18,7 @@ export type TAirplaneProps = {
 export type TBrightnessProps = {
     number: number;
 }
+
+export type TPowerProps = {
+    status: boolean;
+}

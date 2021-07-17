@@ -1,9 +1,9 @@
 import {PayloadAction} from "@reduxjs/toolkit";
-import {TAirplaneProps, TBatteryProps, TBrightnessProps, TVolumeProps} from "./core/types";
+import {TAirplaneProps, TBatteryProps, TBrightnessProps, TPowerProps, TVolumeProps} from "./core/types";
 
 
 export type TGeneralState = {
-    isTurnedOn: boolean;
+    power: TPowerProps;
     brightness: TBrightnessProps,
     airplane: TAirplaneProps;
     volume: TVolumeProps;

@@ -15,7 +15,7 @@ const PhonePowerButton = () => {
     const changePhoneIsTurned = () => {
         setClicked(true);
 
-        phoneGeneralState.isTurnedOn ? dispatch(generalStoreActions.power.setTurned(false)) : dispatch(generalStoreActions.power.setTurned(true));
+        phoneGeneralState.power.status ? dispatch(generalStoreActions.power.setOff()) : dispatch(generalStoreActions.power.setOn());
         setTimeout(() => {
             setClicked(false);
         },750)

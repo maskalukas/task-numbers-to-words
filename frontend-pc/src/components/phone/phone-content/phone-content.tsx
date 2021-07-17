@@ -14,11 +14,11 @@ const PhoneContent = () => {
         <div id={phoneContentId}
              className={` 
              ${phoneContentCss.phoneContent} 
-             ${ phoneGeneralState.isTurnedOn ? phoneContentCss.on : phoneContentCss.off} 
+             ${ phoneGeneralState.power.status ? phoneContentCss.on : phoneContentCss.off} 
              `}
              style={{ filter: `brightness(${phoneGeneralState.brightness.number})` }}>
 
-            {phoneGeneralState.isTurnedOn &&
+            {phoneGeneralState.power.status &&
                 <React.Fragment>
                     <PhoneView></PhoneView>
                     <PhoneBottomMenu></PhoneBottomMenu>
