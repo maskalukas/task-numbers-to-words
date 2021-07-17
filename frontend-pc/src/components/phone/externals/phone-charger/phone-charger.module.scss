@@ -25,7 +25,8 @@
   width: 25px;
   height: 30px;
   border: 1px solid #1a1a1a;
-  border-radius: 6px;
+  position: relative;
+  @include borderRadius(6px);
 }
 
 .chargerPlug {
@@ -38,4 +39,31 @@
   $plugRadius: 5px;
   @include borderTopLeftRadius($plugRadius);
   @include borderTopRightRadius($plugRadius);
+}
+
+.chargerBoltIcon {
+  position: absolute;
+  bottom: 4px;
+  left: 6px;
+  font-size: 21px;
+  color: #ffeb3b;
+  @include animation(pulse 1s infinite linear);
+
+  @keyframes pulse {
+    0% {
+      @include transform(scale(0.8))
+    }
+    25% {
+      @include transform(scale(1))
+    }
+    50% {
+      @include transform(scale(1.2));
+    }
+    75% {
+      @include transform(scale(1));
+    }
+    100% {
+      @include transform(scale(0.8));
+    }
+  }
 }

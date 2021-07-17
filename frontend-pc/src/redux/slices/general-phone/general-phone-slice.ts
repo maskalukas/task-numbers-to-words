@@ -5,7 +5,8 @@ const initialState: TGeneralState = {
     isTurnedOn: false,
     brightness: 1,
     airplane: false,
-    volume: true
+    volume: true,
+    battery: 100
 }
 
 const generalPhoneSlice = createSlice({

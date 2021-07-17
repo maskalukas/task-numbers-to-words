@@ -3,4 +3,5 @@ export type TGeneralState = {
     brightness: number,
     airplane: boolean;
     volume: boolean;
+    battery: number;
 }

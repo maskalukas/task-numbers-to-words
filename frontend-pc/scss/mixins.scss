@@ -74,3 +74,9 @@
   -ms-transform: $value;
 }
 
+@mixin animation($value) {
+  animation: $value;
+  -o-animation: $value;
+  -moz-animation: $value;
+  -webkit-animation: $value;
+}

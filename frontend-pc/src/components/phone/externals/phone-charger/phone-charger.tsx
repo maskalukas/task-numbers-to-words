@@ -1,12 +1,15 @@
 import phoneChargerCss from "./phone-charger.module.css";
 import React, {BaseSyntheticEvent, SyntheticEvent, useState} from "react";
 import {PHONE_ID} from "../../../../constants/elements-ids";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faBolt } from "@fortawesome/free-solid-svg-icons";
 
 const PhoneCharger = () => {
 
     const cabelHeightInitial = 40;
     const [positionBottom, setPositionBottom] = useState(80);
     const [cabelHeight, setCabelHeight] = useState(cabelHeightInitial);
+    const [isPlugged, setIsPlugged] = useState(false);
 
 
     const onMouseDown = (event: any) => {
@@ -25,11 +28,17 @@ const PhoneCharger = () => {
             let newCabelTop = window.innerHeight - cabelTop;
             let isClosest = newCabelTop - phoneElementBottom;
 
-            console.log(isClosest);
-
             if(newPositionBottom >= 0 && newCabelHeight >= 0 && isClosest >= 0) {
                 setPositionBottom(newPositionBottom);
                 setCabelHeight(newCabelHeight);
+
+                if(isClosest <= 5) {
+                    setIsPlugged(true);
+                }
+            }
+
+            if(isClosest >= 5) {
+                setIsPlugged(false);
             }
         }
         window.addEventListener("mousemove", onMouseMove);
@@ -45,7 +54,11 @@ const PhoneCharger = () => {
         <div>
             <div className={phoneChargerCss.charger} onMouseDown={onMouseDown} style={{ bottom: 0 }}>
                 <div className={phoneChargerCss.chargerPlug}></div>
-                <div className={phoneChargerCss.chargerPlugBox}></div>
+                <div className={phoneChargerCss.chargerPlugBox}>
+                    {isPlugged &&
+                        <FontAwesomeIcon icon={faBolt} className={phoneChargerCss.chargerBoltIcon}/>
+                    }
+                </div>
                 <div className={phoneChargerCss.chargerCable} style={{ height: cabelHeight }}></div>
             </div>
         </div>
