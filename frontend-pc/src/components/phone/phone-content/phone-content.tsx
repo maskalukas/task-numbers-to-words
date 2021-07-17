@@ -6,6 +6,7 @@ import React from "react";
 import PhoneView from "../phone-view/phone-view";
 import PhoneBottomMenu from "../phone-view/components/phone-bottom-menu/phone-bottom-menu";
 import { phoneContentId } from "../../../constants/elements-ids";
+import {PhoneContentBatteryChange} from "./components/battery/phone-content-battery-change/phone-content-battery-change";
 
 const PhoneContent = () => {
     const phoneGeneralState: TGeneralState = useSelector((state: IReducersState) => state.generalState);
@@ -23,6 +24,10 @@ const PhoneContent = () => {
                     <PhoneView></PhoneView>
                     <PhoneBottomMenu></PhoneBottomMenu>
                 </React.Fragment>
+            }
+
+            {phoneGeneralState.battery.isShowedNoBatteryIcon &&
+                <PhoneContentBatteryChange></PhoneContentBatteryChange>
             }
         </div>
     )

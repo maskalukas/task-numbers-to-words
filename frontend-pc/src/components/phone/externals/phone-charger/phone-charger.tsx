@@ -1,8 +1,13 @@
 import phoneChargerCss from "./phone-charger.module.css";
-import React, {BaseSyntheticEvent, SyntheticEvent, useState} from "react";
+import React, {BaseSyntheticEvent, SyntheticEvent, useEffect, useState} from "react";
 import {PHONE_ID} from "../../../../constants/elements-ids";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faBolt } from "@fortawesome/free-solid-svg-icons";
+import {Battery} from "../../../../classes/battery";
+import {TGeneralState} from "../../../../redux/interfaces";
+import {useDispatch, useSelector} from "react-redux";
+import {IReducersState} from "../../../../redux/store";
+import {generalStoreActions} from "../../../../redux/slices/general-phone/general-phone-slice";
 
 const PhoneCharger = () => {
 
@@ -11,6 +16,10 @@ const PhoneCharger = () => {
     const [cabelHeight, setCabelHeight] = useState(cabelHeightInitial);
     const [isPlugged, setIsPlugged] = useState(false);
 
+    const phoneGeneralState: TGeneralState = useSelector((state: IReducersState) => state.generalState);
+
+    const dispatch = useDispatch();
+    const battery = new Battery(phoneGeneralState.battery, dispatch);
 
     const onMouseDown = (event: any) => {
         const phoneElement = document.getElementById(PHONE_ID) as HTMLElement;
@@ -34,11 +43,13 @@ const PhoneCharger = () => {
 
                 if(isClosest <= 5) {
                     setIsPlugged(true);
+                    dispatch(generalStoreActions.battery.setIsChargingOn(true));
                 }
             }
 
-            if(isClosest >= 5) {
+            if(isClosest > 5) {
                 setIsPlugged(false);
+                dispatch(generalStoreActions.battery.setIsChargingOn(false));
             }
         }
         window.addEventListener("mousemove", onMouseMove);
@@ -46,9 +57,16 @@ const PhoneCharger = () => {
         const onMouseUp = () => {
             window.removeEventListener("mouseup", onMouseUp);
             window.removeEventListener("mousemove", onMouseMove);
+
         }
         window.addEventListener("mouseup", onMouseUp);
     }
+
+    useEffect(() => {
+        if(isPlugged) {
+            return battery.chargeBattery();
+        }
+    },[isPlugged, battery])
 
     return (
         <div>

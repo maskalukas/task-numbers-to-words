@@ -1,0 +1,35 @@
+@import "../../../../../../../scss/mixins";
+
+.phoneContentNoBatteryIconsBox {
+  position: absolute;
+  left: 50%;
+  @include transform(translate(-50%, -50%));
+  top: 50%;
+  display: flex;
+  @include flexDirection(column);
+  @include alignItems(center);
+  color: #eb1f1f;
+  font-size: 73px;
+
+  > .batteryEmptyIcon {
+    @include animation(showNoBattery 1.2s infinite linear);
+
+    @keyframes showNoBattery {
+      0% {
+        @include transform(scale(0.8));
+      }
+      25% {
+        @include transform(scale(1))
+      }
+      50% {
+        @include transform(scale(1.2));
+      }
+      75% {
+        @include transform(scale(1));
+      }
+      100% {
+        @include transform(scale(0.8));
+      }
+    }
+  }
+}

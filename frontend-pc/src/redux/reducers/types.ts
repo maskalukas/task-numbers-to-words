@@ -3,6 +3,7 @@
 export type TBatteryReducerProps = {
     isCharging: boolean;
     statusNumber: number;
+    isShowedNoBatteryIcon: boolean;
 }
 
 export type TVolumeReducerProps = {

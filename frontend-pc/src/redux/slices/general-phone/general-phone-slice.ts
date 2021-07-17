@@ -32,17 +32,19 @@ const generalPhoneSlice = createSlice({
         setVolumeOff: volumeReducerMethods.setOff,
         setVolumeOn: volumeReducerMethods.setOn,
         // battery
-        batteryChangeIsCharging: batteryReducerMethods.changeIsCharging,
+        batterySetIsChargingOn: batteryReducerMethods.setIsChargingOn,
         batteryIncreaseNumberByOne: batteryReducerMethods.increaseNumberByOne,
-        batteryDecreaseNumberByOne: batteryReducerMethods.decreaseNumberByOne
+        batteryDecreaseNumberByOne: batteryReducerMethods.decreaseNumberByOne,
+        batterySetShowedNoBatteryIcon: batteryReducerMethods.setShowedNoBatteryIcon
     }
 });
 
 export const generalStoreActions  = {
     battery: {
-        changeIsCharging: generalPhoneSlice.actions.batteryChangeIsCharging,
+        setIsChargingOn: generalPhoneSlice.actions.batterySetIsChargingOn,
         increaseNumberByOne: generalPhoneSlice.actions.batteryIncreaseNumberByOne,
-        decreaseNumberByOne: generalPhoneSlice.actions.batteryDecreaseNumberByOne
+        decreaseNumberByOne: generalPhoneSlice.actions.batteryDecreaseNumberByOne,
+        setShowedNoBatteryIcon: generalPhoneSlice.actions.batterySetShowedNoBatteryIcon
     },
     volume: {
         setOn: generalPhoneSlice.actions.setVolumeOn,

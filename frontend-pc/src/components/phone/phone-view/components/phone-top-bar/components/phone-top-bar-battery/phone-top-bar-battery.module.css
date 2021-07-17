@@ -1,0 +1,40 @@
+.phoneTopBarBatteryIcon {
+  animation: showCharging 2s infinite linear;
+  -o-animation: showCharging 2s infinite linear;
+  -moz-animation: showCharging 2s infinite linear;
+  -webkit-animation: showCharging 2s infinite linear;
+}
+@keyframes showCharging {
+  0% {
+    transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+  }
+  25% {
+    transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+  }
+  75% {
+    transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+  }
+  100% {
+    transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+  }
+}
+
+/*# sourceMappingURL=phone-top-bar-battery.module.css.map */

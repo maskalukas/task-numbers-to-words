@@ -12,6 +12,7 @@ import PhoneTopBarNewMessagesIcon from "./components/phone-top-bar-new-message-i
 import React from "react";
 import Sound from "../../../../../utils/sound";
 import PhoneTopBarBattery from "./components/phone-top-bar-battery/phone-top-bar-battery";
+import {Battery} from "../../../../../classes/battery";
 
 const getCurrentTime = (): string => {
     const CurrentDate = new Date();
@@ -31,13 +32,15 @@ const PhoneTopBar = () => {
 
 
     useEffect(() => {
+        const battery = new Battery(phoneGeneralState.battery, dispatch);
+
         const interval = setInterval(() => {
             setTime(getCurrentTime());
-            dispatch(generalStoreActions.battery.decreaseNumberByOne());
+            battery.dischargeBattery();
         }, 1000);
 
         return () => clearInterval(interval);
-    }, [time,phoneGeneralState.battery.statusNumber]);
+    }, [time,phoneGeneralState.battery.isCharging, phoneGeneralState.battery.statusNumber]);
 
 
     const onMouseDown = () => {

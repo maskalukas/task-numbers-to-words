@@ -1,0 +1,22 @@
+@import "../../../../../../../../scss/mixins";
+
+.phoneTopBarBatteryIcon {
+  @include animation(showCharging 2s infinite linear);
+  @keyframes showCharging {
+    0% {
+      @include transform(scale(0.9));
+    }
+    25% {
+      @include transform(scale(1))
+    }
+    50% {
+      @include transform(scale(1.1));
+    }
+    75% {
+      @include transform(scale(1));
+    }
+    100% {
+      @include transform(scale(0.9));
+    }
+  }
+}

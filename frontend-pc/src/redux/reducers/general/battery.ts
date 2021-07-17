@@ -4,18 +4,23 @@ import {TBatteryReducerProps} from "../types";
 
 export const batteryReducerInitial: TBatteryReducerProps = {
     isCharging: false,
-    statusNumber: 62
+    statusNumber: 2,
+    isShowedNoBatteryIcon: false
 }
 
 export const batteryReducerMethods = {
-    changeIsCharging(state: TGeneralState) {
-        state.battery.isCharging = !state.battery.isCharging;
+    setIsChargingOn(state: TGeneralState, action: PayloadAction<boolean>) {
+        state.battery.isCharging = action.payload;
     },
     decreaseNumberByOne(state: TGeneralState) {
-        state.battery = { ...state.battery, statusNumber: state.battery.statusNumber - 1 };
+        state.battery.statusNumber -= 1;
     },
     increaseNumberByOne(state: TGeneralState) {
         state.battery.statusNumber += 1;
+    },
+
+    setShowedNoBatteryIcon(state: TGeneralState, action: PayloadAction<boolean>) {
+        state.battery.isShowedNoBatteryIcon = action.payload;
     }
 }
 

@@ -5,17 +5,19 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import React, {useEffect, useState} from "react";
 import {Battery} from "../../../../../../../classes/battery";
 import {IBattery, TBatteryPart} from "../../../../../../../classes/interfaces";
-import {generalStoreActions} from "../../../../../../../redux/slices/general-phone/general-phone-slice";
+import phoneTopBatteryCss from "./phone-top-bar-battery.module.css";
 
 const PhoneTopBarBattery = () => {
     const phoneGeneralState: TGeneralState = useSelector((state: IReducersState) => state.generalState);
     const dispatch = useDispatch();
 
-    const battery: IBattery = new Battery(phoneGeneralState.battery);
+    const battery: IBattery = new Battery(phoneGeneralState.battery, dispatch);
     const batteryPart = battery.getCurrentBatteryPart();
 
     return (
-        <FontAwesomeIcon icon={["fas", batteryPart.name]} style={{ fontSize: 15, color: batteryPart.color }}/>
+        <FontAwesomeIcon icon={["fas", batteryPart.name]}
+                         style={{ fontSize: 15, color: batteryPart.color }}
+                         className={` ${phoneGeneralState.battery.isCharging ? phoneTopBatteryCss.phoneTopBarBatteryIcon : '' } `}/>
     )
 }
 
