@@ -17,7 +17,10 @@ const PhoneContent = () => {
              ${phoneContentCss.phoneContent} 
              ${ phoneGeneralState.power.status ? phoneContentCss.on : phoneContentCss.off} 
              `}
-             style={{ filter: `brightness(${phoneGeneralState.brightness.number})` }}>
+             style={{
+                 filter: `brightness(${phoneGeneralState.brightness.number})`,
+                 backgroundImage: `url(${process.env.PUBLIC_URL}/img/background.jpg)`
+             }}>
 
             {phoneGeneralState.power.status &&
                 <React.Fragment>

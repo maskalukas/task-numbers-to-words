@@ -9,6 +9,9 @@ $phoneContentBottomRadius: 26px;
   @include flexDirection(column);
   @include borderBottomRightRadius($phoneContentBottomRadius);
   @include borderBottomLeftRadius($phoneContentBottomRadius);
+  background-size: 100%;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
 
   &.on {
     background-color: #fff;

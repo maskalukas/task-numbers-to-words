@@ -1,0 +1,23 @@
+@import "../../../../../../scss/mixins";
+
+.phoneMainMenuWrapper {
+  height: 100%;
+  @include justifyContent(center);
+  @include alignItems(center);
+  display: flex;
+
+  > .mainMenuBtn {
+    background-color: #9bceb9;
+    padding: 13px;
+    font-size: 32px;
+    margin: 0 15px;
+    color: #2a3531;
+    @include borderRadius(17px);
+    cursor: pointer;
+    @include transition(0.5s);
+
+    &:hover {
+      background-color: #779c8d;
+    }
+  }
+}

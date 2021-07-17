@@ -2,7 +2,7 @@ import {TGeneralState} from "../../interfaces";
 import {TPowerReducerProps} from "../types";
 
 export const powerReducerInitial: TPowerReducerProps = {
-    status: false
+    status: true
 }
 
 export const powerReducerMethods = {

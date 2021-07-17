@@ -36,7 +36,7 @@ const PhoneTopBar = () => {
 
         const interval = setInterval(() => {
             setTime(getCurrentTime());
-            battery.dischargeBattery();
+            // battery.dischargeBattery();
         }, 1000);
 
         return () => clearInterval(interval);

@@ -9,6 +9,9 @@
   -webkit-border-bottom-right-radius: 26px;
   border-bottom-left-radius: 26px;
   -webkit-border-bottom-left-radius: 26px;
+  background-size: 100%;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
 }
 .phoneContent.on {
   background-color: #fff;

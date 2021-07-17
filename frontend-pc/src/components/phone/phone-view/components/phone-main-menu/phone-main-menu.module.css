@@ -1,0 +1,28 @@
+.phoneMainMenuWrapper {
+  height: 100%;
+  justify-content: center;
+  -webkit-justify-content: center;
+  align-items: center;
+  -webkit-align-items: center;
+  display: flex;
+}
+.phoneMainMenuWrapper > .mainMenuBtn {
+  background-color: #9bceb9;
+  padding: 13px;
+  font-size: 32px;
+  margin: 0 15px;
+  color: #2a3531;
+  border-radius: 17px;
+  -moz-border-radius: 17px;
+  -webkit-border-radius: 17px;
+  cursor: pointer;
+  transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+.phoneMainMenuWrapper > .mainMenuBtn:hover {
+  background-color: #779c8d;
+}
+
+/*# sourceMappingURL=phone-main-menu.module.css.map */
