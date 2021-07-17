@@ -6,8 +6,8 @@ import {PhoneContent} from "../phone-content/phone-content";
 import {PHONE_ID} from "../../../constants/elements-ids";
 import React, {useRef} from "react";
 
-const PhoneLayout = () => {
 
+const PhoneLayout = () => {
     return (
         <div id={PHONE_ID} className={ `${phoneCss.phoneEdge} ${phoneLayoutCss.phoneLayout}` }>
             <PhoneHeader></PhoneHeader>

@@ -7,8 +7,8 @@ export const batteryInitial: TBatteryProps = {
 }
 
 export const batteryMethods = {
-    changeIsCharging(state: TGeneralState, payload: any) {
+    changeIsCharging(state: TGeneralState) {
         state.battery.isCharging = !state.battery.isCharging;
-    }
+    },
 }
 

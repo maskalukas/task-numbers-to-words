@@ -45,7 +45,7 @@ export const generalStoreActions  = {
     },
     airplane: {
         setOn: generalPhoneSlice.actions.setAirplaneOn,
-        setOff: generalPhoneSlice.actions.setVolumeOff
+        setOff: generalPhoneSlice.actions.setAirplaneOff
     },
     brightness: {
         setBrightness: generalPhoneSlice.actions.setBrightness

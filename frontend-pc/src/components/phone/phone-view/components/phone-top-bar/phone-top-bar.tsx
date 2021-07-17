@@ -11,6 +11,7 @@ import {generalStoreActions} from "../../../../../redux/slices/general-phone/gen
 import PhoneTopBarNewMessagesIcon from "./components/phone-top-bar-new-message-icon/phone-top-bar-new-messages-icon";
 import React from "react";
 import Sound from "../../../../../utils/sound";
+import PhoneTopBarBattery from "./components/phone-top-bar-battery/phone-top-bar-battery";
 
 const getCurrentTime = (): string => {
     const CurrentDate = new Date();
@@ -54,7 +55,7 @@ const PhoneTopBar = () => {
     }
 
     const airplaneChangeState = (e: any) => {
-        const newAirplaneState = !phoneGeneralState.airplane;
+        const newAirplaneState = !phoneGeneralState.airplane.status;
         if(newAirplaneState) {
             dispatch(generalStoreActions.airplane.setOn());
         } else {
@@ -63,7 +64,7 @@ const PhoneTopBar = () => {
     }
 
     const volumeChangeState = (e: any) => {
-        const newVolumeState = !phoneGeneralState.volume;
+        const newVolumeState = !phoneGeneralState.volume.status;
         if(newVolumeState) {
             dispatch(generalStoreActions.volume.setOn());
         } else {
@@ -87,13 +88,16 @@ const PhoneTopBar = () => {
                 <div className={phoneTopBarCss.phoneTopBarMainLineRightPart}>
                     <PhoneTopBarNewMessagesIcon></PhoneTopBarNewMessagesIcon>
 
-                    { !phoneGeneralState.airplane
+                    { !phoneGeneralState.airplane.status
                       ? <React.Fragment>
                             <FontAwesomeIcon icon={faWifi}/>
                             <FontAwesomeIcon icon={faSignal}/>
                         </React.Fragment>
                         : <FontAwesomeIcon icon={faPlane}/>
                     }
+
+                    <PhoneTopBarBattery></PhoneTopBarBattery>
+
                 </div>
             </div>
             {
