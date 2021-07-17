@@ -1,0 +1,42 @@
+.charger {
+  display: flex;
+  align-items: center;
+  -webkit-align-items: center;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  cursor: grab;
+  position: absolute;
+}
+.charger > div {
+  pointer-events: none;
+  z-index: -1;
+}
+
+.chargerCable {
+  background-color: #3f3f3f;
+  border: 1px solid #1a1a1a;
+  width: 6px;
+}
+
+.chargerPlugBox {
+  background-color: #3f3f3f;
+  width: 25px;
+  height: 30px;
+  border: 1px solid #1a1a1a;
+  border-radius: 6px;
+}
+
+.chargerPlug {
+  background-color: #bcbcbc;
+  width: 20px;
+  height: 8px;
+  border: 1px solid #202020;
+  border-bottom: none;
+  border-top-left-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+}
+
+/*# sourceMappingURL=phone-charger.module.css.map */

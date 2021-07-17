@@ -3,7 +3,8 @@
   -moz-box-shadow: 5px 2px 0px #3f3f3f;
   -o-box-shadow: 5px 2px 0px #3f3f3f;
   -webkit-box-shadow: 5px 2px 0px #3f3f3f;
-  position: relative;
+  position: absolute;
+  top: 34px;
   display: flex;
   flex-direction: column;
   -ms-flex-direction: column;

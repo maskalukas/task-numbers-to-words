@@ -3,8 +3,8 @@
 
 .phoneLayout {
   @include boxShadow(5px 2px 0px $phone-edge-color-darker);
-  position: relative;
+  position: absolute;
+  top: 34px;
   display: flex;
   @include flexDirection(column);
-
 }

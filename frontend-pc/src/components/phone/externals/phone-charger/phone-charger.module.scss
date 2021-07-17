@@ -1,0 +1,41 @@
+@import "../../../../../scss/mixins";
+
+
+.charger {
+  display: flex;
+  @include alignItems(center);
+  @include flexDirection(column);
+  cursor: grab;
+  position: absolute;
+
+  > div {
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+.chargerCable {
+  background-color: #3f3f3f;
+  border: 1px solid #1a1a1a;
+  width: 6px;
+}
+
+.chargerPlugBox {
+  background-color: #3f3f3f;
+  width: 25px;
+  height: 30px;
+  border: 1px solid #1a1a1a;
+  border-radius: 6px;
+}
+
+.chargerPlug {
+  background-color: #bcbcbc;
+  width: 20px;
+  height: 8px;
+  border: 1px solid #202020;
+  border-bottom: none;
+
+  $plugRadius: 5px;
+  @include borderTopLeftRadius($plugRadius);
+  @include borderTopRightRadius($plugRadius);
+}

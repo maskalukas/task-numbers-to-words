@@ -1,5 +1,6 @@
 body {
   background-color: #00a991;
+  overflow: hidden;
 }
 
 html, body, #root, #root-container {
@@ -12,6 +13,7 @@ html, body, #root, #root-container {
   -webkit-justify-content: center;
   align-items: center;
   -webkit-align-items: center;
+  position: relative;
 }
 
 /*# sourceMappingURL=App.css.map */

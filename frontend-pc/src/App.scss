@@ -2,6 +2,7 @@
 
 body {
   background-color: #00a991;
+  overflow: hidden;
 }
 
 html,body, #root, #root-container {
@@ -12,4 +13,5 @@ html,body, #root, #root-container {
   display: flex;
   @include justifyContent(center);
   @include alignItems(center);
+  position: relative;
 }
