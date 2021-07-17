@@ -7,7 +7,7 @@ import PhoneTopBarButton from "./components/phone-top-bar-button/phone-top-bar-b
 import {TGeneralState} from "../../../../../redux/interfaces";
 import {useDispatch, useSelector} from "react-redux";
 import {IReducersState} from "../../../../../redux/store";
-import {setAirplane, setVolume} from "../../../../../redux/slices/general-phone/general-phone-slice";
+import {generalStoreActions} from "../../../../../redux/slices/general-phone/general-phone-slice";
 import PhoneTopBarNewMessagesIcon from "./components/phone-top-bar-new-message-icon/phone-top-bar-new-messages-icon";
 import React from "react";
 import Sound from "../../../../../utils/sound";
@@ -54,12 +54,12 @@ const PhoneTopBar = () => {
     }
 
     const airplaneChangeState = (e: any) => {
-        dispatch(setAirplane(!phoneGeneralState.airplane));
+        dispatch(generalStoreActions.airplane.setAirplane(!phoneGeneralState.airplane));
     }
 
     const volumeChangeState = (e: any) => {
         const newVolumeState = !phoneGeneralState.volume;
-        dispatch(setVolume(newVolumeState));
+        dispatch(generalStoreActions.volume.setVolume(newVolumeState));
 
         if(newVolumeState) {
             const sound = new Sound();

@@ -6,7 +6,7 @@ import {BaseSyntheticEvent, useState} from "react";
 import {TGeneralState} from "../../../../../../../redux/interfaces";
 import {useDispatch, useSelector} from "react-redux";
 import {IReducersState} from "../../../../../../../redux/store";
-import {setBrightness} from "../../../../../../../redux/slices/general-phone/general-phone-slice";
+import { generalStoreActions } from "../../../../../../../redux/slices/general-phone/general-phone-slice";
 
 const PhoneTopBarBrightnessSlider = () => {
 
@@ -19,7 +19,7 @@ const PhoneTopBarBrightnessSlider = () => {
     }
 
     const onChange = (e: BaseSyntheticEvent) => {
-        dispatch(setBrightness(e.target.value));
+        dispatch(generalStoreActions.brightness.setBrightness(e.target.value));
     }
 
     return (
