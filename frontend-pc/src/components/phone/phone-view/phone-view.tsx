@@ -1,23 +1,23 @@
 import phoneViewCss from "./phone-view.module.css";
-import PhoneKeyboard from "./components/phone-keyboard/phone-keyboard";
 import PhoneTopBar from "./components/phone-top-bar/phone-top-bar";
-import PhoneMainMenu from "./components/phone-main-menu/phone-main-menu";
+import {BrowserRouter, Route, Router} from "react-router-dom";
+import {screenRoute as newMessageScreenRoute, PhoneScreenNewMessage} from "../screens/phone-screen-new-message/phone-screen-new-message";
+import { PhoneScreenMainMenu, screenRoute as mainMenuScreenRoute } from "../screens/phone-screen-main-menu/phone-screen-main-menu";
 
 const PhoneView = () => {
 
-
-
-    const screens = {
-        mainMenu: <PhoneMainMenu></PhoneMainMenu>
-    }
-
-
-
     return (
-        <div className={phoneViewCss.phoneView}>
-            <PhoneTopBar></PhoneTopBar>
-            {screens.mainMenu}
-        </div>
+        <BrowserRouter>
+            <div className={phoneViewCss.phoneView}>
+                <PhoneTopBar></PhoneTopBar>
+                <Route path={'/' + mainMenuScreenRoute}>
+                    <PhoneScreenMainMenu></PhoneScreenMainMenu>
+                </Route>
+                <Route path={'/' + newMessageScreenRoute}>
+                    <PhoneScreenNewMessage></PhoneScreenNewMessage>
+                </Route>
+            </div>
+        </BrowserRouter>
     )
 }
 

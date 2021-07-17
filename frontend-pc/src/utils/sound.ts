@@ -1,4 +1,5 @@
 import {ISound} from "./interfaces";
+import {TVolumeReducerProps} from "../redux/reducers/types";
 
 class Sound implements ISound {
 
@@ -8,7 +9,11 @@ class Sound implements ISound {
 
     private static DEFAULT_SONG_NAME = "beep.mp3";
 
-    public constructor(songName?: string) {
+    private readonly volumeState: TVolumeReducerProps;
+
+    public constructor(volumeState: TVolumeReducerProps, songName?: string) {
+        this.volumeState = volumeState;
+
         if(songName) {
             this.songName = songName;
         } else {
@@ -16,9 +21,14 @@ class Sound implements ISound {
         }
     }
 
-    public runSound(): Promise<any> {
-        const audio = new Audio(this.songsPath + this.songName);
-        return audio.play();
+    public runSound(): Promise<void|false> {
+        if(this.volumeState.status) {
+            const audio = new Audio(this.songsPath + this.songName);
+            return audio.play();
+        } else {
+            return new Promise((resolve) => resolve(false))
+        }
+
     }
 }
 

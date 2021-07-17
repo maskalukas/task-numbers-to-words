@@ -69,17 +69,18 @@ const PhoneTopBar = () => {
 
     const volumeChangeState = (e: any) => {
         const newVolumeState = !phoneGeneralState.volume.status;
-        if(newVolumeState) {
+        if (newVolumeState) {
             dispatch(generalStoreActions.volume.setOn());
         } else {
             dispatch(generalStoreActions.volume.setOff());
         }
-
-        if(newVolumeState) {
-            const sound = new Sound();
-            sound.runSound();
-        }
     }
+
+
+    useEffect(() => {
+        const sound = new Sound(phoneGeneralState.volume);
+        sound.runSound();
+    },[phoneGeneralState.volume])
 
 
     return (

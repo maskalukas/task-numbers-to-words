@@ -19,7 +19,6 @@ const PhoneContent = () => {
              `}
              style={{
                  filter: `brightness(${phoneGeneralState.brightness.number})`,
-                 backgroundImage: `url(${process.env.PUBLIC_URL}/img/background.jpg)`
              }}>
 
             {phoneGeneralState.power.status &&

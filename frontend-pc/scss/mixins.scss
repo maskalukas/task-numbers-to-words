@@ -80,3 +80,9 @@
   -moz-animation: $value;
   -webkit-animation: $value;
 }
+
+@mixin flexWrap($value) {
+  flex-wrap: $value;
+  -ms-flex-wrap: $value;
+  -webkit-flex-wrap: $value;
+}

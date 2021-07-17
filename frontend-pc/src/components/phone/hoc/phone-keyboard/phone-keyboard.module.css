@@ -1,0 +1,39 @@
+.phoneKeyboardButtonWrap {
+  display: flex;
+  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+}
+
+.phoneKeyboardButton {
+  background-color: #5ab782;
+  width: 60px;
+  height: 60px;
+  margin: 10px 20px;
+  display: flex;
+  border-radius: 21px;
+  -moz-border-radius: 21px;
+  -webkit-border-radius: 21px;
+  justify-content: center;
+  -webkit-justify-content: center;
+  align-items: center;
+  -webkit-align-items: center;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  cursor: pointer;
+  color: #152c1f;
+  font-weight: 600;
+}
+.phoneKeyboardButton:hover {
+  background-color: #3c845c;
+}
+.phoneKeyboardButton > .chars {
+  font-size: 11px;
+}
+
+/*# sourceMappingURL=phone-keyboard.module.css.map */
