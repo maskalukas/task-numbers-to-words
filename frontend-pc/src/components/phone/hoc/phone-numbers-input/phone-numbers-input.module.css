@@ -1,0 +1,31 @@
+.phoneNumbersInputWrap {
+  display: flex;
+}
+
+.phoneNumbersInput {
+  color: #161616;
+  width: 100%;
+  padding: 13px 12px;
+  font-size: 20px;
+  margin: 11px;
+  background: #e8e8e8;
+  border: none;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  outline: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/*# sourceMappingURL=phone-numbers-input.module.css.map */

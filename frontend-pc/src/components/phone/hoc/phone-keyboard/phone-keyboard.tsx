@@ -41,14 +41,14 @@ const items: TButtonItem[] = [{
 
 
 
-export const PhoneKeyboard = () => {
-
+export const PhoneKeyboard = (props: { callback: (value: number) => any }) => {
     const phoneGeneralState: TGeneralState = useSelector((state: IReducersState) => state.generalState);
-
 
     const onMouseClick = (event: any, buttonItem: TButtonItem) => {
         const sound = new Sound(phoneGeneralState.volume);
         sound.runSound()
+
+        props.callback(buttonItem.value);
     }
 
     return (

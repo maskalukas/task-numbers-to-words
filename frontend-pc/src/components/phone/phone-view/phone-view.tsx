@@ -1,8 +1,8 @@
 import phoneViewCss from "./phone-view.module.css";
 import PhoneTopBar from "./components/phone-top-bar/phone-top-bar";
 import {BrowserRouter, Route, Router} from "react-router-dom";
-import {screenRoute as newMessageScreenRoute, PhoneScreenNewMessage} from "../screens/phone-screen-new-message/phone-screen-new-message";
 import { PhoneScreenMainMenu, screenRoute as mainMenuScreenRoute } from "../screens/phone-screen-main-menu/phone-screen-main-menu";
+import {PhoneScreenNewCall, screenRoute as newCallScreenRoute} from "../screens/phone-screen-new-call/phone-screen-new-call";
 
 const PhoneView = () => {
 
@@ -13,8 +13,8 @@ const PhoneView = () => {
                 <Route path={'/' + mainMenuScreenRoute}>
                     <PhoneScreenMainMenu></PhoneScreenMainMenu>
                 </Route>
-                <Route path={'/' + newMessageScreenRoute}>
-                    <PhoneScreenNewMessage></PhoneScreenNewMessage>
+                <Route path={'/' + newCallScreenRoute}>
+                    <PhoneScreenNewCall></PhoneScreenNewCall>
                 </Route>
             </div>
         </BrowserRouter>

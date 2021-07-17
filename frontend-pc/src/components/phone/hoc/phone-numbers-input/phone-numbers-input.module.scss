@@ -1,0 +1,27 @@
+@import "../../../../../scss/mixins";
+
+.phoneNumbersInputWrap {
+  display: flex;
+}
+
+.phoneNumbersInput {
+  color: #161616;
+  width: 100%;
+  padding: 13px 12px;
+  font-size: 20px;
+  margin: 11px;
+  background: #e8e8e8;
+  border: none;
+  @include borderRadius(10px);
+  @include boxSizing(border-box);
+  outline: none;
+}
+
+input[type='number'] {
+  -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}

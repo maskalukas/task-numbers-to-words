@@ -3,13 +3,13 @@ import React, {useCallback, useMemo} from "react";
 import {IconName} from "@fortawesome/fontawesome-common-types";
 import phoneMainMenuCss from "./phone-screen-main-menu.module.css";
 import {useHistory} from "react-router";
-import { screenRoute as newMessageScreenRoute } from "../phone-screen-new-message/phone-screen-new-message";
+import { screenRoute as newCallScreenRoute } from "../phone-screen-new-call/phone-screen-new-call";
 
 export const screenRoute = "main-menu";
 
 const buttons: { icon: IconName, link: string }[] = [{
     icon: "envelope",
-    link: newMessageScreenRoute
+    link: newCallScreenRoute
 },{
     icon: "inbox",
     link: "/"
