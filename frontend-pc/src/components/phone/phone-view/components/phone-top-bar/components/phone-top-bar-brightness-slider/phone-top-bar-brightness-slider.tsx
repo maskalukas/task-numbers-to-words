@@ -25,7 +25,7 @@ const PhoneTopBarBrightnessSlider = () => {
     return (
         <div className={ `${generalCss.centerVertical} ${phoneTopBarBrightnessSliderCss.brightnessSlider}`}>
             <FontAwesomeIcon icon={faSun}/>
-            <input type="range" min="0.2" max="1.8" defaultValue={ phoneGeneralState.brightness } step="0.1" onMouseDown={onMouseDown} onChange={onChange}/>
+            <input type="range" min="0.2" max="1.8" defaultValue={ phoneGeneralState.brightness.number } step="0.1" onMouseDown={onMouseDown} onChange={onChange}/>
         </div>
     );
 }

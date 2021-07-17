@@ -16,7 +16,7 @@ const PhoneContent = () => {
              ${phoneContentCss.phoneContent} 
              ${ phoneGeneralState.isTurnedOn ? phoneContentCss.on : phoneContentCss.off} 
              `}
-             style={{ filter: `brightness(${phoneGeneralState.brightness})` }}>
+             style={{ filter: `brightness(${phoneGeneralState.brightness.number})` }}>
 
             {phoneGeneralState.isTurnedOn &&
                 <React.Fragment>

@@ -54,12 +54,21 @@ const PhoneTopBar = () => {
     }
 
     const airplaneChangeState = (e: any) => {
-        dispatch(generalStoreActions.airplane.setAirplane(!phoneGeneralState.airplane));
+        const newAirplaneState = !phoneGeneralState.airplane;
+        if(newAirplaneState) {
+            dispatch(generalStoreActions.airplane.setOn());
+        } else {
+            dispatch(generalStoreActions.airplane.setOff());
+        }
     }
 
     const volumeChangeState = (e: any) => {
         const newVolumeState = !phoneGeneralState.volume;
-        dispatch(generalStoreActions.volume.setVolume(newVolumeState));
+        if(newVolumeState) {
+            dispatch(generalStoreActions.volume.setOn());
+        } else {
+            dispatch(generalStoreActions.volume.setOff());
+        }
 
         if(newVolumeState) {
             const sound = new Sound();
@@ -91,8 +100,8 @@ const PhoneTopBar = () => {
                 expanded && contentShowed &&
                 <div className={phoneTopBarCss.phoneTopBarExpandedContent}>
                     <div className={ phoneTopBarCss.phoneTopBarButtonsRow }>
-                        <PhoneTopBarButton iconName="plane" isActivated={phoneGeneralState.airplane} func={airplaneChangeState}></PhoneTopBarButton>
-                        <PhoneTopBarButton iconName="volume-up" isActivated={phoneGeneralState.volume} func={volumeChangeState}></PhoneTopBarButton>
+                        <PhoneTopBarButton iconName="plane" isActivated={phoneGeneralState.airplane.status} func={airplaneChangeState}></PhoneTopBarButton>
+                        <PhoneTopBarButton iconName="volume-up" isActivated={phoneGeneralState.volume.status} func={volumeChangeState}></PhoneTopBarButton>
                     </div>
                     <PhoneTopBarBrightnessSlider></PhoneTopBarBrightnessSlider>
 

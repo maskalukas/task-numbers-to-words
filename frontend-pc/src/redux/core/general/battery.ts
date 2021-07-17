@@ -1,7 +1,8 @@
-import {TBatteryProps, TGeneralState} from "../interfaces";
+import { TGeneralState} from "../../interfaces";
 import {PayloadAction} from "@reduxjs/toolkit";
+import { TBatteryProps} from "../types";
 
-export const batteryProps: TBatteryProps = {
+export const batteryInitial: TBatteryProps = {
     isCharging: false,
 }
 
