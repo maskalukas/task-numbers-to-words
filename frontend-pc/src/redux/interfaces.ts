@@ -1,13 +1,18 @@
 import {PayloadAction} from "@reduxjs/toolkit";
-import {TAirplaneProps, TBatteryProps, TBrightnessProps, TPowerProps, TVolumeProps} from "./core/types";
+import {
+    TAirplaneReducerProps, TBatteryReducerProps,
+    TBrightnessReducerProps,
+    TPowerReducerProps,
+    TVolumeReducerProps
+} from "./reducers/types";
 
 
 export type TGeneralState = {
-    power: TPowerProps;
-    brightness: TBrightnessProps,
-    airplane: TAirplaneProps;
-    volume: TVolumeProps;
-    battery: TBatteryProps;
+    power: TPowerReducerProps;
+    brightness: TBrightnessReducerProps,
+    airplane: TAirplaneReducerProps;
+    volume: TVolumeReducerProps;
+    battery: TBatteryReducerProps
 }
 
 

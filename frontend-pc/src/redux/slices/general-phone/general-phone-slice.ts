@@ -1,17 +1,18 @@
 import {ActionCreatorWithPayload, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import { TGeneralState, } from "../../interfaces";
-import {volumeInitial, volumeMethods} from "../../core/general/volume";
-import {batteryInitial, batteryMethods} from "../../core/general/battery";
-import {airplaneInitial, airplaneMethods} from "../../core/general/airplane";
-import {brightnessInitial, brightnessMethods} from "../../core/general/brightness";
-import {powerInitial, powerMethods} from "../../core/general/power";
+import {powerReducerInitial, powerReducerMethods} from "../../reducers/general/power";
+import {brightnessReducerInitial, brightnessReducerMethods} from "../../reducers/general/brightness";
+import {airplaneReducerInitial, airplaneReducerMethods} from "../../reducers/general/airplane";
+import {volumeReducerInitial, volumeReducerMethods} from "../../reducers/general/volume";
+import {batteryReducerInitial, batteryReducerMethods} from "../../reducers/general/battery";
+
 
 const initialState: TGeneralState = {
-    power: powerInitial,
-    brightness: brightnessInitial,
-    airplane: airplaneInitial,
-    volume: volumeInitial,
-    battery: batteryInitial
+    power: powerReducerInitial,
+    brightness: brightnessReducerInitial,
+    airplane: airplaneReducerInitial,
+    volume: volumeReducerInitial,
+    battery: batteryReducerInitial
 }
 
 
@@ -20,24 +21,28 @@ const generalPhoneSlice = createSlice({
     initialState: initialState,
     reducers: {
         // power
-        setPowerOn: powerMethods.setOn,
-        setPowerOff: powerMethods.setOff,
+        setPowerOn: powerReducerMethods.setOn,
+        setPowerOff: powerReducerMethods.setOff,
         // brightness,
-        setBrightness: brightnessMethods.setBrightness,
+        setBrightness: brightnessReducerMethods.setBrightness,
         // airplane
-        setAirplaneOn: airplaneMethods.setOn,
-        setAirplaneOff: airplaneMethods.setOff,
+        setAirplaneOn: airplaneReducerMethods.setOn,
+        setAirplaneOff: airplaneReducerMethods.setOff,
         // volume
-        setVolumeOff: volumeMethods.setOff,
-        setVolumeOn: volumeMethods.setOn,
+        setVolumeOff: volumeReducerMethods.setOff,
+        setVolumeOn: volumeReducerMethods.setOn,
         // battery
-        batteryChangeIsCharging: batteryMethods.changeIsCharging
+        batteryChangeIsCharging: batteryReducerMethods.changeIsCharging,
+        batteryIncreaseNumberByOne: batteryReducerMethods.increaseNumberByOne,
+        batteryDecreaseNumberByOne: batteryReducerMethods.decreaseNumberByOne
     }
 });
 
 export const generalStoreActions  = {
     battery: {
-        changeIsCharging: generalPhoneSlice.actions.batteryChangeIsCharging
+        changeIsCharging: generalPhoneSlice.actions.batteryChangeIsCharging,
+        increaseNumberByOne: generalPhoneSlice.actions.batteryIncreaseNumberByOne,
+        decreaseNumberByOne: generalPhoneSlice.actions.batteryDecreaseNumberByOne
     },
     volume: {
         setOn: generalPhoneSlice.actions.setVolumeOn,

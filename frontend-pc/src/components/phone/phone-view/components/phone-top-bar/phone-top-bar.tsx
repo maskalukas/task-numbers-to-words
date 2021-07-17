@@ -33,10 +33,11 @@ const PhoneTopBar = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setTime(getCurrentTime());
+            dispatch(generalStoreActions.battery.decreaseNumberByOne());
         }, 1000);
 
         return () => clearInterval(interval);
-    }, [time]);
+    }, [time,phoneGeneralState.battery.statusNumber]);
 
 
     const onMouseDown = () => {

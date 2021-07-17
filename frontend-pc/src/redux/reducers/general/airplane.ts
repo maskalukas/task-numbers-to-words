@@ -1,11 +1,11 @@
 import {TGeneralState} from "../../interfaces";
-import { TAirplaneProps} from "../types";
+import {TAirplaneReducerProps} from "../types";
 
-export const airplaneInitial: TAirplaneProps = {
+export const airplaneReducerInitial: TAirplaneReducerProps = {
     status: false
 }
 
-export const airplaneMethods = {
+export const airplaneReducerMethods = {
     setOn(state: TGeneralState): void {
         state.airplane.status = true;
     },

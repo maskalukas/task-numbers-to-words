@@ -1,12 +1,12 @@
-import {  TBrightnessProps} from "../types";
 import {TGeneralState} from "../../interfaces";
 import {ActionCreatorWithPayload, PayloadAction} from "@reduxjs/toolkit";
+import {TBrightnessReducerProps} from "../types";
 
-export const brightnessInitial: TBrightnessProps = {
+export const brightnessReducerInitial: TBrightnessReducerProps = {
     number: 1
 }
 
-export const brightnessMethods = {
+export const brightnessReducerMethods = {
     setBrightness(state: TGeneralState, action: PayloadAction<number>): void {
         state.brightness.number = action.payload;
     }

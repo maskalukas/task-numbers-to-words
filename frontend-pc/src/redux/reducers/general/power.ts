@@ -1,11 +1,11 @@
-import {TPowerProps, TVolumeProps} from "../types";
 import {TGeneralState} from "../../interfaces";
+import {TPowerReducerProps} from "../types";
 
-export const powerInitial: TPowerProps = {
+export const powerReducerInitial: TPowerReducerProps = {
     status: false
 }
 
-export const powerMethods = {
+export const powerReducerMethods = {
     setOn(state: TGeneralState) {
         state.power.status = true;
     },

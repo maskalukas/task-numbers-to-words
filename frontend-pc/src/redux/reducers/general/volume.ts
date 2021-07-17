@@ -1,12 +1,12 @@
 import {TGeneralState} from "../../interfaces";
 import {PayloadAction} from "@reduxjs/toolkit";
-import {TVolumeProps} from "../types";
+import {TVolumeReducerProps} from "../types";
 
-export const volumeInitial: TVolumeProps = {
+export const volumeReducerInitial: TVolumeReducerProps = {
     status: false
 }
 
-export const volumeMethods = {
+export const volumeReducerMethods = {
     setOn(state: TGeneralState) {
         state.volume.status = true;
     },
