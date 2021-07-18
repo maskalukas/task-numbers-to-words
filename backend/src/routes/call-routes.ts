@@ -10,8 +10,8 @@ const initRouters = () => {
     const callService: ICallService = new CallService();
     const callController = new CallController(callService);
 
-    router.get("/:number/withfilter", callController.getCharactersFromNumbersWithFilter.bind(callController));
-    router.get("/:number/nofilter", callController.getCharactersFromNumbersWithouFilter.bind(callController));
+    router.get("/:numbers/withfilter", callController.getCharactersFromNumbersWithFilter.bind(callController));
+    router.get("/:numbers/nofilter", callController.getCharactersFromNumbersWithouFilter.bind(callController));
 }
 initRouters();
 

@@ -9,10 +9,13 @@ export class CallController {
         this.callService = callService;
     }
 
-    public getCharactersFromNumbersWithouFilter(req: Request,res: Response,next: any) {
+    public async getCharactersFromNumbersWithouFilter(req: Request,res: Response,next: any) {
+        const result = await this.callService.convertNumbersToCharacters(req.params.numbers);
+        res.send(result);
     }
 
-    public getCharactersFromNumbersWithFilter(req: Request, res: Response, next: any) {
-
+    public async getCharactersFromNumbersWithFilter(req: Request, res: Response, next: any) {
+        const result = await this.callService.convertNumbersToCharacters(req.params.numbers);
+        res.send(result);
     }
 }

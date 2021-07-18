@@ -5,8 +5,10 @@ const app = express();
 const port = 8000;
 
 app.listen(port,() => {
-    console.log("cus");
+    console.log("Server běží.");
 });
 
 
-app.use('/v1/call', callRoutes)
+app.use('/v1/call', callRoutes);
+
+

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3566b83-3de3-4291-8eb5-9d72e47ae808" name="Default Changelist" comment="tsconfig">
-      <change afterPath="$PROJECT_DIR$/src/routes/call-routes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/call-service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/interfaces.ts" afterDir="false" />
+    <list default="true" id="c3566b83-3de3-4291-8eb5-9d72e47ae808" name="Default Changelist" comment="Přidaný routes, controller a service.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/call-route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/call-controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/call-controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/call-controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/call-routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/call-routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/call-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/call-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/interfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/interfaces.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/convertor-numbers-to-characters.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/convertor-numbers-to-characters.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +24,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1vV9i4IBqzywO5YvzWSw0wj0BiO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -64,7 +73,7 @@
       <option name="presentableId" value="Default" />
       <updated>1626636513438</updated>
       <workItem from="1626636514676" duration="54000" />
-      <workItem from="1626638615573" duration="1471000" />
+      <workItem from="1626638615573" duration="7138000" />
     </task>
     <task id="LOCAL-00001" summary="backend init">
       <created>1626638647105</created>
@@ -80,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626639208597</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Přidaný routes, controller a service.">
+      <created>1626640241358</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1626640241358</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -93,6 +109,8 @@
         <option value="$PROJECT_DIR$/src/services/call-service.js.map" />
         <option value="$PROJECT_DIR$/src/services/interfaces.js" />
         <option value="$PROJECT_DIR$/src/services/interfaces.js.map" />
+        <option value="$PROJECT_DIR$/src/utils/convertor-numbers-to-characters.js" />
+        <option value="$PROJECT_DIR$/src/utils/convertor-numbers-to-characters.js.map" />
       </list>
     </option>
   </component>
@@ -110,7 +128,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="backend init" />
     <MESSAGE value="tsconfig" />
-    <option name="LAST_COMMIT_MESSAGE" value="tsconfig" />
+    <MESSAGE value="Přidaný routy, controller a service" />
+    <MESSAGE value="Přidaný routes, controller a service." />
+    <option name="LAST_COMMIT_MESSAGE" value="Přidaný routes, controller a service." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
