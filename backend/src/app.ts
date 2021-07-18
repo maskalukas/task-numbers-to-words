@@ -4,12 +4,7 @@ const app = express();
 const port = 8000;
 
 app.listen(port,() => {
-    console.log("ddd.");
-
-
+    console.log("cus");
 });
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-
-})
+app.use
