@@ -1,5 +1,11 @@
 @import "../../../../../scss/mixins";
 
+.phoneMessageDetailWrapper {
+  height: 100%;
+  display: flex;
+  @include flexDirection(column);
+}
+
 .phoneMessageDetailTopBar {
   background-color: #4e81b8;
   padding: 10px 15px;
@@ -16,14 +22,13 @@
 
 .phoneMessageDetailResponseBox {
   background-color: #28588b;
-  height: 100%;
-  width: 80%;
-  margin: 25px;
+  width: 100%;
   @include borderRadius(20px);
   @include boxSizing(border-box);
-  word-break: break-word;
+  padding: 13px;
 
   > span {
     margin: 0 5px;
+    display: flex;
   }
 }

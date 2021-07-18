@@ -21,3 +21,16 @@ body {
 html,body, #root {
   height: 100%;
 }
+
+::-webkit-scrollbar {
+  height: 12px;
+  width: 7px;
+  background: #fff0;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #bdbdbd;
+  border-radius: 35px;
+  box-shadow: none;
+}

@@ -25,13 +25,15 @@ export const PhoneScreenMessageDetail = (props: RouteComponentProps<TMessageDeta
     },[messageItem]);
 
     return (
-        <div>
+        <div className={ messageDetailCss.phoneMessageDetailWrapper }>
             <div className={ messageDetailCss.phoneMessageDetailTopBar }>
                 <FontAwesomeIcon icon={["fas","user-circle"]}></FontAwesomeIcon>
                 <span>From: { messageItem?.number }</span>
             </div>
-            <div className={ messageDetailCss.phoneMessageDetailResponseBox }>
-                { messageItem?.response.map((response, index) => <span key={ index }>{ response }</span>) }
+            <div style={{ padding: 15, overflowY: "scroll", height: 353 }}>
+                <div className={ messageDetailCss.phoneMessageDetailResponseBox }>
+                    { messageItem?.response.map((response, index) => <span key={ index }>{ response }</span>) }
+                </div>
             </div>
         </div>
     )
