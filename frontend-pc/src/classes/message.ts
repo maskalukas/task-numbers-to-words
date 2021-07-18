@@ -1,4 +1,4 @@
-import {TMessagesState} from "../redux/interfaces";
+import {TMessagesListType, TMessagesState} from "../redux/interfaces";
 import {Dispatch} from "redux";
 import {messagesStoreActions} from "../redux/slices/messages-phone-slice";
 import {IMessage} from "./interfaces";
@@ -25,7 +25,26 @@ export class Messages implements IMessage {
         return  this.messagesState.messages.find(msg => msg.id === messageId);
     }
 
+    public getNewMessages(): TMessageItem[] {
+        const newMessages: TMessageItem[] = [];
 
+        for(let i = 0; i < this.messagesState.newMessagesIds.length; i++) {
+            const message = this.messagesState.messages.find(message => message.id === this.messagesState.newMessagesIds[i]);
+
+            if(message) {
+                newMessages.push(message);
+            }
+        }
+
+        return newMessages;
+    }
+
+    public getMessagesListByType(type: TMessagesListType): TMessageItem[] {
+        switch (type) {
+            case "all": return this.messagesState.messages;
+            case "news": return this.getNewMessages();
+        }
+    }
 
 
 }

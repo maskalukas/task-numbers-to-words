@@ -24,3 +24,5 @@ export type TMessagesState = {
     newMessagesIds: number[],
     counterMessages: number
 }
+
+export type TMessagesListType = "all"|"news";

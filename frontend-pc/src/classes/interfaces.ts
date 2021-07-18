@@ -1,5 +1,6 @@
 import {Dispatch} from "redux";
 import {TMessageItem} from "../redux/reducers/types";
+import {TMessagesListType, TMessagesState} from "../redux/interfaces";
 
 export type TBatteryPartsNames = "battery-empty"|"battery-quarter"|"battery-half"|"battery-three-quarters"|"battery-full";
 
@@ -22,6 +23,9 @@ export interface ICall {
 
 export interface IMessage {
     addNewMessage(response: any): void;
+    getMessage(messageId: number): TMessageItem| undefined;
+    getNewMessages(): TMessageItem[];
+    getMessagesListByType(type: TMessagesListType): TMessageItem[];
 }
 
 export interface ISound {
