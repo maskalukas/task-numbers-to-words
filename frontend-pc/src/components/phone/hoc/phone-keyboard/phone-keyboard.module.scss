@@ -6,7 +6,7 @@
 }
 
 .phoneKeyboardButton {
-  background-color: #5ab782;
+  background-color: #a8c34a;
   width: 60px;
   height: 60px;
   margin: 10px 20px;
@@ -16,12 +16,13 @@
   @include alignItems(center);
   @include flexDirection(column);
   @include transition(0.5s);
+  @include userSelect(none);
   cursor: pointer;
-  color: #152c1f;
+  color: #2d3512;
   font-weight: 600;
 
   &:hover {
-    background-color: #3c845c;
+    background-color: #829739;
   }
 
   > .chars {

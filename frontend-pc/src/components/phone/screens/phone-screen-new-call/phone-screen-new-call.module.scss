@@ -1,0 +1,22 @@
+@import "../../../../../scss/mixins";
+
+.callButton {
+  font-size: 37px;
+  background: #5ab782;
+  padding: 11px;
+  @include borderRadius(20px);
+  color: #152c1f;
+  cursor: pointer;
+  @include transition(0.5s);
+
+  &:hover {
+    @include transform(scale(1.15));
+  }
+}
+
+
+.callButtonsLine {
+  display: flex;
+  @include justifyContent(center);
+  margin-top: 20px;
+}

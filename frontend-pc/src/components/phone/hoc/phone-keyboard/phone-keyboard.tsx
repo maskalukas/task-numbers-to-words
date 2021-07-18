@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import phoneKeyboardButtonCss from "./phone-keyboard.module.css";
 import Sound from "../../../../utils/sound";
 import {TGeneralState} from "../../../../redux/interfaces";
@@ -40,15 +40,14 @@ const items: TButtonItem[] = [{
 }];
 
 
-
-export const PhoneKeyboard = (props: { callback: (value: number) => any }) => {
+export const PhoneKeyboard = (props: { callback: (num: string) => any }) => {
     const phoneGeneralState: TGeneralState = useSelector((state: IReducersState) => state.generalState);
 
     const onMouseClick = (event: any, buttonItem: TButtonItem) => {
         const sound = new Sound(phoneGeneralState.volume);
         sound.runSound()
 
-        props.callback(buttonItem.value);
+        props.callback(buttonItem.value.toString());
     }
 
     return (

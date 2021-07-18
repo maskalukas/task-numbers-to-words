@@ -3,7 +3,7 @@ import {PayloadAction} from "@reduxjs/toolkit";
 import {TVolumeReducerProps} from "../types";
 
 export const volumeReducerInitial: TVolumeReducerProps = {
-    status: false
+    status: true
 }
 
 export const volumeReducerMethods = {

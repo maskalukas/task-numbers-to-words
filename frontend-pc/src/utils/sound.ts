@@ -21,14 +21,11 @@ class Sound implements ISound {
         }
     }
 
-    public runSound(): Promise<void|false> {
+    public runSound(): void {
         if(this.volumeState.status) {
             const audio = new Audio(this.songsPath + this.songName);
-            return audio.play();
-        } else {
-            return new Promise((resolve) => resolve(false))
+            audio.play();
         }
-
     }
 }
 

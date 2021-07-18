@@ -86,3 +86,11 @@
   -ms-flex-wrap: $value;
   -webkit-flex-wrap: $value;
 }
+
+
+@mixin userSelect($value) {
+  user-select: $value;
+  -moz-user-select: $value;
+  -ms-user-select: $value;
+  -webkit-user-select: $value;
+}

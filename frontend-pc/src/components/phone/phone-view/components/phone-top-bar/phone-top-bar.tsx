@@ -1,5 +1,5 @@
 import phoneTopBarCss from "./phone-top-bar.module.css";
-import { useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {faChevronLeft, faChevronUp, faPlane, faSignal, faWifi} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import PhoneTopBarBrightnessSlider from "./components/phone-top-bar-brightness-slider/phone-top-bar-brightness-slider";
@@ -76,11 +76,16 @@ const PhoneTopBar = () => {
         }
     }
 
-
-    useEffect(() => {
-        const sound = new Sound(phoneGeneralState.volume);
-        sound.runSound();
-    },[phoneGeneralState.volume])
+    const isFirstRun = useRef(true);
+    useEffect (() => {
+        if (isFirstRun.current) {
+            isFirstRun.current = false;
+            return;
+        } else {
+            const sound = new Sound(phoneGeneralState.volume);
+            sound.runSound();
+        }
+    },[phoneGeneralState.volume]);
 
 
     return (

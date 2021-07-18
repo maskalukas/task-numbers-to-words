@@ -1,3 +1,3 @@
 export interface ISound {
-    runSound(): Promise<void|false>;
+    runSound(): void;
 }
