@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3566b83-3de3-4291-8eb5-9d72e47ae808" name="Default Changelist" comment="backend init">
+    <list default="true" id="c3566b83-3de3-4291-8eb5-9d72e47ae808" name="Default Changelist" comment="tsconfig">
+      <change afterPath="$PROJECT_DIR$/src/routes/call-routes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/call-service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/interfaces.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/call-route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/call-controller.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +25,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1vV9i4IBqzywO5YvzWSw0wj0BiO" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -35,6 +40,7 @@
     <property name="javascript.nodejs.core.library.typings.version" value="16.3.3" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
     <property name="ts.external.directory.path" value="C:\learn\v2-number-to-words\backend\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -58,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1626636513438</updated>
       <workItem from="1626636514676" duration="54000" />
-      <workItem from="1626638615573" duration="441000" />
+      <workItem from="1626638615573" duration="1471000" />
     </task>
     <task id="LOCAL-00001" summary="backend init">
       <created>1626638647105</created>
@@ -67,11 +73,28 @@
       <option name="project" value="LOCAL" />
       <updated>1626638647105</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="tsconfig">
+      <created>1626639208597</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1626639208597</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/controllers/call-controller.js" />
+        <option value="$PROJECT_DIR$/src/controllers/call-controller.js.map" />
+        <option value="$PROJECT_DIR$/src/services/call-service.js" />
+        <option value="$PROJECT_DIR$/src/services/call-service.js.map" />
+        <option value="$PROJECT_DIR$/src/services/interfaces.js" />
+        <option value="$PROJECT_DIR$/src/services/interfaces.js.map" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -86,7 +109,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="backend init" />
-    <option name="LAST_COMMIT_MESSAGE" value="backend init" />
+    <MESSAGE value="tsconfig" />
+    <option name="LAST_COMMIT_MESSAGE" value="tsconfig" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
