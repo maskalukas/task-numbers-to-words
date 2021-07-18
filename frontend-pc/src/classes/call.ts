@@ -5,7 +5,6 @@ import {
     TCallProgressReducerProps,
     TVolumeReducerProps
 } from "../redux/reducers/types";
-import {TGeneralState} from "../redux/interfaces";
 import {Dispatch} from "redux";
 import {callsStoreActions} from "../redux/slices/calls-phone-slice";
 

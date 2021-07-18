@@ -34,3 +34,11 @@ export type TCallHistoryItem = {
     number: string;
     time: string;
 }
+
+export type TMessageItem = {
+    id: number;
+    number: string;
+    response: any;
+    time?: string;
+}
+

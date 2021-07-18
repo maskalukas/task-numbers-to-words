@@ -1,5 +1,5 @@
-import {ISound} from "./interfaces";
 import {TVolumeReducerProps} from "../redux/reducers/types";
+import {ISound} from "./interfaces";
 
 class Sound implements ISound {
 

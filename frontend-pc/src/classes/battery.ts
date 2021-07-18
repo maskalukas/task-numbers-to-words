@@ -46,7 +46,7 @@ export class Battery implements IBattery {
             const fromRange = Battery.TYPES[i].range[0];
             const toRange = Battery.TYPES[i].range[1];
 
-            if(this.batteryState.statusNumber >= fromRange && this.batteryState.statusNumber <= Battery.TYPES[i].range[1]) {
+            if(this.batteryState.statusNumber >= fromRange && this.batteryState.statusNumber <= toRange) {
                 resultObject = {
                     name: Battery.TYPES[i].name,
                     color: Battery.TYPES[i].color

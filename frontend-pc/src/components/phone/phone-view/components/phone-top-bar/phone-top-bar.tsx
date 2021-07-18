@@ -9,10 +9,11 @@ import {useDispatch, useSelector} from "react-redux";
 import {IReducersState} from "../../../../../redux/store";
 import PhoneTopBarNewMessagesIcon from "./components/phone-top-bar-new-message-icon/phone-top-bar-new-messages-icon";
 import React from "react";
-import Sound from "../../../../../utils/sound";
 import PhoneTopBarBattery from "./components/phone-top-bar-battery/phone-top-bar-battery";
 import {Battery} from "../../../../../classes/battery";
 import {generalStoreActions} from "../../../../../redux/slices/general-phone-slice";
+import Sound from "../../../../../classes/sound";
+import {ISound} from "../../../../../classes/interfaces";
 
 const getCurrentTime = (): string => {
     const CurrentDate = new Date();
@@ -82,7 +83,7 @@ const PhoneTopBar = () => {
             isFirstRun.current = false;
             return;
         } else {
-            const sound = new Sound(phoneGeneralState.volume);
+            const sound: ISound = new Sound(phoneGeneralState.volume);
             sound.runSound();
         }
     },[phoneGeneralState.volume]);

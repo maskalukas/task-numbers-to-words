@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import phoneKeyboardButtonCss from "./phone-keyboard.module.css";
-import Sound from "../../../../utils/sound";
+import Sound from "../../../../classes/sound";
 import {TGeneralState} from "../../../../redux/interfaces";
 import {useSelector} from "react-redux";
 import {IReducersState} from "../../../../redux/store";

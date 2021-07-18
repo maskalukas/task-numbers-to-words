@@ -19,3 +19,11 @@ export interface ICall {
     setNumber(inputNumber: string): void;
 }
 
+export interface ISms {
+
+}
+
+export interface ISound {
+    runSound(): void;
+}
+
