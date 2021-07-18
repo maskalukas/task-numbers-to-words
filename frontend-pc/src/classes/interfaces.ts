@@ -16,4 +16,6 @@ export interface IBattery {
 
 export interface ICall {
     call(): Promise<any>;
+    setNumber(inputNumber: string): void;
 }
+

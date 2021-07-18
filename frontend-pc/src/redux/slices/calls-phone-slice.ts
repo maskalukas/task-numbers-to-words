@@ -2,6 +2,7 @@ import {TCallsState} from "../interfaces";
 
 import {createSlice} from "@reduxjs/toolkit";
 import {callProgressReducerInitial, callProgressReducerMethods} from "../reducers/calls/call-progress";
+import {callHistoryReducerMethods} from "../reducers/calls/call-history";
 
 const initialState: TCallsState = {
     callProgress: callProgressReducerInitial,
@@ -15,7 +16,9 @@ const callsPhoneSlice = createSlice({
     reducers: {
         // callProgress
         callProgressCall: callProgressReducerMethods.call,
-        callProgressCancelCall: callProgressReducerMethods.cancelCall
+        callProgressCancelCall: callProgressReducerMethods.cancelCall,
+        // callHistory
+        callHistoryAddCall: callHistoryReducerMethods.addCall
     }
 });
 
@@ -23,6 +26,9 @@ export const callsStoreActions  = {
     callProgres: {
         call: callsPhoneSlice.actions.callProgressCall,
         cancelCall: callsPhoneSlice.actions.callProgressCancelCall
+    },
+    callHistory: {
+        addCall: callsPhoneSlice.actions.callHistoryAddCall
     }
 }
 

@@ -27,3 +27,10 @@ export type TPowerReducerProps = {
 export type TCallProgressReducerProps = {
     status: boolean;
 }
+
+export type TCallHistoryReducerProps = TCallHistoryItem[];
+
+export type TCallHistoryItem = {
+    number: string;
+    time: string;
+}

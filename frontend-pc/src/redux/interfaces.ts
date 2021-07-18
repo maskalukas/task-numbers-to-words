@@ -1,7 +1,7 @@
 import {PayloadAction} from "@reduxjs/toolkit";
 import {
     TAirplaneReducerProps, TBatteryReducerProps,
-    TBrightnessReducerProps, TCallProgressReducerProps,
+    TBrightnessReducerProps, TCallHistoryItem, TCallProgressReducerProps,
     TPowerReducerProps,
     TVolumeReducerProps
 } from "./reducers/types";
@@ -17,7 +17,7 @@ export type TGeneralState = {
 
 export type TCallsState = {
     callProgress: TCallProgressReducerProps
-    history: [];
+    history: TCallHistoryItem[];
 }
 
 
