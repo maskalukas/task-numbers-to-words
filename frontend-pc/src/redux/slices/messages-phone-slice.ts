@@ -1,4 +1,3 @@
-import {TMessagesState} from "../interfaces";
 import {createSlice} from "@reduxjs/toolkit";
 import {messagesReducerInitial, messagesReducerMethods} from "../reducers/messages/messages";
 

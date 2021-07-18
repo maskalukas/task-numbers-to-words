@@ -1,4 +1,3 @@
-import {PayloadAction} from "@reduxjs/toolkit";
 import {
     TAirplaneReducerProps, TBatteryReducerProps,
     TBrightnessReducerProps, TCallHistoryItem, TCallProgressReducerProps, TMessageItem,

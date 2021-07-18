@@ -7,14 +7,14 @@ import messagePhoneReducer from "./slices/messages-phone-slice";
 export interface IReducersState {
     generalState: TGeneralState;
     callsState: TCallsState,
-    smsState: TMessagesState
+    messagesState: TMessagesState
 }
 
 export const store = configureStore({
     reducer: {
         generalState: generalPhoneReducer,
         callsState: callPhoneReducer,
-        smsState:  messagePhoneReducer
+        messagesState:  messagePhoneReducer
     }
 });
 

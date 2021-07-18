@@ -10,9 +10,8 @@ export const messagesReducerInitial: TMessagesState = {
 }
 
 export const messagesReducerMethods = {
-    addMessage(state: TMessagesState, action: PayloadAction<TMessageItem>): void {
+    addMessage(state: TMessagesState, action: PayloadAction<TMessageItem>): any {
         const date = new Date();
-
         state.messages.push({
             id: state.counterMessages + 1,
             number: action.payload.number,

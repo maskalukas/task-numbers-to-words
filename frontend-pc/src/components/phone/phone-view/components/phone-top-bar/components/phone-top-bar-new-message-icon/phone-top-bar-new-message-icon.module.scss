@@ -20,3 +20,24 @@
   }
 }
 
+.phoneMessageIconBoxNewMessageAnime {
+  @include animation(newMessageAnime 1.5s linear);
+
+  @keyframes newMessageAnime {
+    0% {
+      @include transform(scale(0.9));
+    }
+    25% {
+      @include transform(scale(1))
+    }
+    50% {
+      @include transform(scale(1.1));
+    }
+    75% {
+      @include transform(scale(1));
+    }
+    100% {
+      @include transform(scale(0.9));
+    }
+  }
+}

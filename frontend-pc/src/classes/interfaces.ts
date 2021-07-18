@@ -1,4 +1,5 @@
 import {Dispatch} from "redux";
+import {TMessageItem} from "../redux/reducers/types";
 
 export type TBatteryPartsNames = "battery-empty"|"battery-quarter"|"battery-half"|"battery-three-quarters"|"battery-full";
 
@@ -15,12 +16,12 @@ export interface IBattery {
 
 
 export interface ICall {
-    call(): Promise<any>;
+    call(): void;
     setNumber(inputNumber: string): void;
 }
 
-export interface ISms {
-
+export interface IMessage {
+    addNewMessage(response: any): void;
 }
 
 export interface ISound {

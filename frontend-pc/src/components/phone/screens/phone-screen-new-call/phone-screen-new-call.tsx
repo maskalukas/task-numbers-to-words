@@ -4,10 +4,11 @@ import {PhoneNumbersInput} from "../../hoc/phone-numbers-input/phone-numbers-inp
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import newCallScreenCss from "./phone-screen-new-call.module.css"
 import {Call} from "../../../../classes/call";
-import {TCallsState, TGeneralState} from "../../../../redux/interfaces";
+import {TCallsState, TGeneralState, TMessagesState} from "../../../../redux/interfaces";
 import {useDispatch, useSelector} from "react-redux";
 import {IReducersState} from "../../../../redux/store";
-import {ICall} from "../../../../classes/interfaces";
+import {ICall, IMessage} from "../../../../classes/interfaces";
+import {Message} from "../../../../classes/message";
 
 export const screenRoute = "new-call";
 
@@ -15,6 +16,7 @@ export const PhoneScreenNewCall = () => {
 
     const phoneGeneralState: TGeneralState = useSelector((state: IReducersState) => state.generalState);
     const phoneCallState: TCallsState = useSelector((state: IReducersState) => state.callsState);
+    const messagesState: TMessagesState = useSelector((state: IReducersState) => state.messagesState);
     const dispatch = useDispatch();
 
     const [numbers, setNewNumber] = useState<string[]>([]);
@@ -37,8 +39,12 @@ export const PhoneScreenNewCall = () => {
             dispatch
         );
         call.setNumber(currentInputNumbers);
-        await call.call();
+        call.call();
+
+        const sms: IMessage = new Message(messagesState, dispatch);
+        sms.addNewMessage("cauu");
     }
+
 
     return (
         <div>

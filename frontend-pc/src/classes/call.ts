@@ -35,15 +35,15 @@ export class Call implements ICall {
         this.number = inputNumber;
     }
 
-    public call(): Promise<any> {
+    public call(): void {
+        let result = false;
+
         if(this.number && !this.airplaneState.status) {
             this.dispatch(callsStoreActions.callProgres.call());
             this.dispatch(callsStoreActions.callHistory.addCall(this.number));
-        }
 
-        return new Promise((resolve) => {
-            resolve(this.number);
-        })
+            result = true;
+        }
     }
 
 }

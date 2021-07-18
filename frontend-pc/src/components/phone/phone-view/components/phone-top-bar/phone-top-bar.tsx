@@ -78,6 +78,7 @@ const PhoneTopBar = () => {
     }
 
     const isFirstRun = useRef(true);
+
     useEffect (() => {
         if (isFirstRun.current) {
             isFirstRun.current = false;
