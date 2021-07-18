@@ -1,7 +1,7 @@
 import {IBattery, TBatteryPart, TBatteryPartsNames} from "./interfaces";
 import {TBatteryReducerProps} from "../redux/reducers/types";
 import { Dispatch, AnyAction } from "redux";
-import {generalStoreActions} from "../redux/slices/general-phone/general-phone-slice";
+import {generalStoreActions} from "../redux/slices/general-phone-slice";
 
 export class Battery implements IBattery {
 

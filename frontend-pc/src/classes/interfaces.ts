@@ -12,3 +12,8 @@ export interface IBattery {
     dischargeBattery(): void;
     showNoBatteryIcon(value: boolean): any;
 }
+
+
+export interface ICall {
+    call(): Promise<any>;
+}

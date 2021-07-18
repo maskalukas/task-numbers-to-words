@@ -13,4 +13,11 @@ code {
 }
 
 
+body {
+  background-color: #00a991;
+  overflow: hidden;
+}
 
+html,body, #root {
+  height: 100%;
+}

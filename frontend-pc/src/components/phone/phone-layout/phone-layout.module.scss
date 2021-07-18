@@ -7,4 +7,5 @@
   top: 34px;
   display: flex;
   @include flexDirection(column);
+  @include userSelect(none);
 }

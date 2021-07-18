@@ -7,12 +7,12 @@ import PhoneTopBarButton from "./components/phone-top-bar-button/phone-top-bar-b
 import {TGeneralState} from "../../../../../redux/interfaces";
 import {useDispatch, useSelector} from "react-redux";
 import {IReducersState} from "../../../../../redux/store";
-import {generalStoreActions} from "../../../../../redux/slices/general-phone/general-phone-slice";
 import PhoneTopBarNewMessagesIcon from "./components/phone-top-bar-new-message-icon/phone-top-bar-new-messages-icon";
 import React from "react";
 import Sound from "../../../../../utils/sound";
 import PhoneTopBarBattery from "./components/phone-top-bar-battery/phone-top-bar-battery";
 import {Battery} from "../../../../../classes/battery";
+import {generalStoreActions} from "../../../../../redux/slices/general-phone-slice";
 
 const getCurrentTime = (): string => {
     const CurrentDate = new Date();

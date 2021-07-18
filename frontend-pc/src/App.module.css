@@ -1,0 +1,19 @@
+.database {
+  position: absolute;
+  right: 18px;
+  top: 16px;
+  font-size: 69px;
+  color: #083b34;
+}
+
+.rootContainer {
+  display: flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+  align-items: center;
+  -webkit-align-items: center;
+  position: relative;
+  height: 100%;
+}
+
+/*# sourceMappingURL=App.module.css.map */

@@ -2,11 +2,11 @@ import {faSun} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import generalCss from "../../../../../../../general.module.css";
 import phoneTopBarBrightnessSliderCss from "./phone-top-bar-brightness-slider.module.css";
-import {BaseSyntheticEvent, useState} from "react";
+import {BaseSyntheticEvent} from "react";
 import {TGeneralState} from "../../../../../../../redux/interfaces";
 import {useDispatch, useSelector} from "react-redux";
 import {IReducersState} from "../../../../../../../redux/store";
-import { generalStoreActions } from "../../../../../../../redux/slices/general-phone/general-phone-slice";
+import {generalStoreActions} from "../../../../../../../redux/slices/general-phone-slice";
 
 const PhoneTopBarBrightnessSlider = () => {
 

@@ -1,17 +1,19 @@
 @import "../scss/mixins";
 
-body {
-  background-color: #00a991;
-  overflow: hidden;
+.database {
+  position: absolute;
+  right: 18px;
+  top: 16px;
+  font-size: 69px;
+  color: #083b34;
 }
 
-html,body, #root, #root-container {
-  height: 100%;
-}
 
-#root-container {
+
+.rootContainer {
   display: flex;
   @include justifyContent(center);
   @include alignItems(center);
   position: relative;
+  height: 100%;
 }

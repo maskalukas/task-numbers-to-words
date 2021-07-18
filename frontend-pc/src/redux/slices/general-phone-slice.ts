@@ -1,10 +1,10 @@
-import {ActionCreatorWithPayload, createSlice, PayloadAction} from "@reduxjs/toolkit";
-import { TGeneralState, } from "../../interfaces";
-import {powerReducerInitial, powerReducerMethods} from "../../reducers/general/power";
-import {brightnessReducerInitial, brightnessReducerMethods} from "../../reducers/general/brightness";
-import {airplaneReducerInitial, airplaneReducerMethods} from "../../reducers/general/airplane";
-import {volumeReducerInitial, volumeReducerMethods} from "../../reducers/general/volume";
-import {batteryReducerInitial, batteryReducerMethods} from "../../reducers/general/battery";
+import { createSlice} from "@reduxjs/toolkit";
+import { TGeneralState, } from "../interfaces";
+import {powerReducerInitial, powerReducerMethods} from "../reducers/general/power";
+import {brightnessReducerInitial, brightnessReducerMethods} from "../reducers/general/brightness";
+import {airplaneReducerInitial, airplaneReducerMethods} from "../reducers/general/airplane";
+import {volumeReducerInitial, volumeReducerMethods} from "../reducers/general/volume";
+import {batteryReducerInitial, batteryReducerMethods} from "../reducers/general/battery";
 
 
 const initialState: TGeneralState = {
@@ -62,5 +62,6 @@ export const generalStoreActions  = {
         setOff: generalPhoneSlice.actions.setPowerOff
     }
 }
+
 export default generalPhoneSlice.reducer;
 

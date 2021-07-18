@@ -23,3 +23,7 @@ export type TBrightnessReducerProps = {
 export type TPowerReducerProps = {
     status: boolean;
 }
+
+export type TCallProgressReducerProps = {
+    status: boolean;
+}

@@ -2,7 +2,7 @@ import {BaseSyntheticEvent, useEffect, useState} from "react";
 import phoneNumbersInputCss from "./phone-numbers-input.module.css";
 
 
-export const PhoneNumbersInput = (props: { values: string[] }) => {
+export const PhoneNumbersInput = (props: { values: string[], callback: Function }) => {
 
     const [value, setValue] = useState("");
 
@@ -12,9 +12,11 @@ export const PhoneNumbersInput = (props: { values: string[] }) => {
 
     useEffect(() => {
         if(props.values.length > 0) {
-            setValue(state => state + props.values.pop())
+            setValue(state => state + props.values.pop());
         }
-    },[props.values])
+
+        props.callback(value);
+    },[props.values, value])
 
 
     return (

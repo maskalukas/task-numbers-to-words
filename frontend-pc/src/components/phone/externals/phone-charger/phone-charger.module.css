@@ -7,6 +7,10 @@
   -webkit-flex-direction: column;
   cursor: grab;
   position: absolute;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
 }
 .charger > div {
   pointer-events: none;

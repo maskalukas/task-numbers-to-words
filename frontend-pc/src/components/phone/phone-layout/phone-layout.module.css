@@ -9,6 +9,10 @@
   flex-direction: column;
   -ms-flex-direction: column;
   -webkit-flex-direction: column;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
 }
 
 /*# sourceMappingURL=phone-layout.module.css.map */
