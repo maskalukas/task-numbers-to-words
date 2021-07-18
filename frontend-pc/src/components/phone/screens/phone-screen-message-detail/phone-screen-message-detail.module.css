@@ -1,0 +1,32 @@
+.phoneMessageDetailTopBar {
+  background-color: #4e81b8;
+  padding: 10px 15px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  -webkit-align-items: center;
+}
+.phoneMessageDetailTopBar > svg {
+  color: #24415d;
+  font-size: 40px;
+  margin-right: 25px;
+}
+
+.phoneMessageDetailResponseBox {
+  background-color: #28588b;
+  height: 100%;
+  width: 80%;
+  margin: 25px;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  word-break: break-word;
+}
+.phoneMessageDetailResponseBox > span {
+  margin: 0 5px;
+}
+
+/*# sourceMappingURL=phone-screen-message-detail.module.css.map */

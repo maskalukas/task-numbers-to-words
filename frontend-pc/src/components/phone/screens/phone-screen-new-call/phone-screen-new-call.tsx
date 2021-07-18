@@ -8,7 +8,7 @@ import {TCallsState, TGeneralState, TMessagesState} from "../../../../redux/inte
 import {useDispatch, useSelector} from "react-redux";
 import {IReducersState} from "../../../../redux/store";
 import {ICall, IMessage} from "../../../../classes/interfaces";
-import {Message} from "../../../../classes/message";
+import {Messages} from "../../../../classes/message";
 
 export const screenRoute = "new-call";
 
@@ -41,7 +41,7 @@ export const PhoneScreenNewCall = () => {
         call.setNumber(currentInputNumbers);
         call.call();
 
-        const sms: IMessage = new Message(messagesState, dispatch);
+        const sms: IMessage = new Messages(messagesState, dispatch);
         sms.addNewMessage("cauu");
     }
 

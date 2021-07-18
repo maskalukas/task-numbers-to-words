@@ -38,7 +38,7 @@ export type TCallHistoryItem = {
 export type TMessageItem = {
     id?: number;
     number: string;
-    response: any;
+    response: string[];
     time?: string;
 }
 

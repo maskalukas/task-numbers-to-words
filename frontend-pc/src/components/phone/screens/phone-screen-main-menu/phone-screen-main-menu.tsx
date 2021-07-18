@@ -18,7 +18,9 @@ const buttons: { icon: IconName, link: string }[] = [{
 export const PhoneScreenMainMenu = () => {
 
     const history = useHistory();
-    const handleOnClick = (event: MouseEvent, route: string) => history.push('/' + route);
+    const handleOnClick = (event: MouseEvent, route: string) => history.push({
+        pathname: '/' + route,
+    });
 
 
     return (

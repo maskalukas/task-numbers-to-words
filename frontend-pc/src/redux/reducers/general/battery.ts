@@ -4,7 +4,7 @@ import {TBatteryReducerProps} from "../types";
 
 export const batteryReducerInitial: TBatteryReducerProps = {
     isCharging: false,
-    statusNumber:100,
+    statusNumber:10,
     isShowedNoBatteryIcon: false
 }
 

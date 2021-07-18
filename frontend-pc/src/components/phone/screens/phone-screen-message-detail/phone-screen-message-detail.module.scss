@@ -1,0 +1,29 @@
+@import "../../../../../scss/mixins";
+
+.phoneMessageDetailTopBar {
+  background-color: #4e81b8;
+  padding: 10px 15px;
+  color: #fff;
+  display: flex;
+  @include alignItems(center);
+
+  > svg {
+    color: #24415d;
+    font-size: 40px;
+    margin-right: 25px;
+  }
+}
+
+.phoneMessageDetailResponseBox {
+  background-color: #28588b;
+  height: 100%;
+  width: 80%;
+  margin: 25px;
+  @include borderRadius(20px);
+  @include boxSizing(border-box);
+  word-break: break-word;
+
+  > span {
+    margin: 0 5px;
+  }
+}

@@ -1,15 +1,5 @@
 @import "../scss/mixins";
 
-.database {
-  position: absolute;
-  right: 18px;
-  top: 16px;
-  font-size: 69px;
-  color: #083b34;
-}
-
-
-
 .rootContainer {
   display: flex;
   @include justifyContent(center);
