@@ -32,17 +32,13 @@ export const PhoneScreenNewCall = () => {
 
     const onMouseClickCallButton = async () => {
         const call: ICall = new Call(
-            phoneGeneralState.volume,
-            phoneGeneralState.airplane,
-            phoneCallState.callProgress,
-            phoneCallState.history,
+            phoneGeneralState,
+            phoneCallState,
+            messagesState,
             dispatch
         );
         call.setNumber(currentInputNumbers);
         call.call();
-
-        const sms: IMessage = new Messages(messagesState, dispatch);
-        sms.addNewMessage("cauu");
     }
 
 
@@ -51,8 +47,10 @@ export const PhoneScreenNewCall = () => {
             <PhoneNumbersInput values={ numbers } callback={ onInputNumbersChange }></PhoneNumbersInput>
             <PhoneKeyboard callback={ onMouseClickNumberButtonCallback }></PhoneKeyboard>
 
-            <div className={ newCallScreenCss.callButtonsLine } onMouseDown={ onMouseClickCallButton }>
-                <FontAwesomeIcon icon={["fas","phone"]} className={ newCallScreenCss.callButton }></FontAwesomeIcon>
+            <div className={ newCallScreenCss.callButtonsLine }>
+                <FontAwesomeIcon icon={["fas","phone"]}
+                                 style={phoneGeneralState.airplane.status ? { cursor: "not-allowed", opacity: "0.9", background: "#c4c4c4", color: "grey" } : {}}
+                                 className={ newCallScreenCss.callButton } onMouseDown={ onMouseClickCallButton }></FontAwesomeIcon>
             </div>
         </div>
     )

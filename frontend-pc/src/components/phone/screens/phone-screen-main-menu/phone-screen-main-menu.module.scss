@@ -1,4 +1,5 @@
 @import "../../../../../scss/mixins";
+@import "../../../../../scss/colors";
 
 .phoneMainMenuWrapper {
   height: 100%;
@@ -6,18 +7,24 @@
   @include alignItems(center);
   display: flex;
 
-  > .mainMenuBtn {
-    background-color: #9bceb9;
-    padding: 13px;
-    font-size: 32px;
-    margin: 0 15px;
-    color: #2a3531;
-    @include borderRadius(17px);
-    cursor: pointer;
-    @include transition(0.5s);
+  > div {
+    background-color: $phone-bg-screen-light-grey;
+    padding: 81px 24px;
+    @include borderRadius(41px);
 
-    &:hover {
-      background-color: #779c8d;
+    > .mainMenuBtn {
+      background-color: #279467;
+      padding: 13px;
+      font-size: 58px;
+      margin: 0 15px;
+      color: #2a3531;
+      @include borderRadius(17px);
+      cursor: pointer;
+      @include transition(0.5s);
+
+      &:hover {
+        background-color: #779c8d;
+      }
     }
   }
 }

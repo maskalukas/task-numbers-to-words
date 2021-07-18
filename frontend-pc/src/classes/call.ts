@@ -1,4 +1,4 @@
-import {ICall} from "./interfaces";
+import {ICall, IMessage} from "./interfaces";
 import {
     TAirplaneReducerProps,
     TCallHistoryReducerProps,
@@ -7,27 +7,27 @@ import {
 } from "../redux/reducers/types";
 import {Dispatch} from "redux";
 import {callsStoreActions} from "../redux/slices/calls-phone-slice";
+import {CallService} from "../services/call-service";
+import {TCallsState, TGeneralState, TMessagesState} from "../redux/interfaces";
+import {Messages} from "./message";
 
 export class Call implements ICall {
 
-    private volumeState: TVolumeReducerProps;
-    private airplaneState: TAirplaneReducerProps;
-    private callProgressState: TCallProgressReducerProps;
-    private callHistoryState: TCallHistoryReducerProps;
+    private generalState: TGeneralState;
+    private callState: TCallsState;
+    private messagesState: TMessagesState;
     private dispatch: Dispatch;
     private number: string | undefined;
 
     public constructor(
-        volumeState: TVolumeReducerProps,
-        airplaneState: TAirplaneReducerProps,
-        callProgress: TCallProgressReducerProps,
-        callHistory: TCallHistoryReducerProps,
+        generalState: TGeneralState,
+        callState: TCallsState,
+        messagesState: TMessagesState,
         dispatch: Dispatch) {
 
-        this.volumeState = volumeState;
-        this.airplaneState = airplaneState;
-        this.callProgressState = callProgress;
-        this.callHistoryState = callHistory;
+        this.generalState = generalState;
+        this.callState = callState;
+        this.messagesState = messagesState;
         this.dispatch = dispatch;
     }
 
@@ -35,15 +35,21 @@ export class Call implements ICall {
         this.number = inputNumber;
     }
 
-    public call(): void {
-        let result = false;
-
-        if(this.number && !this.airplaneState.status) {
+    public call(): boolean {
+        if(this.number && !this.generalState.airplane.status) {
             this.dispatch(callsStoreActions.callProgres.call());
             this.dispatch(callsStoreActions.callHistory.addCall(this.number));
 
-            result = true;
+            const callService = new CallService();
+            callService.call()
+                .then((response) => {
+                    const sms: IMessage = new Messages(this.messagesState, this.dispatch);
+                    sms.addNewMessage(response);
+                })
+            return true;
         }
+
+        return false
     }
 
 }

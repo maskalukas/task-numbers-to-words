@@ -11,6 +11,8 @@
   > svg {
     color: $phone-bottom-menu-icons;
     @include transition(0.3s);
+    margin: 0 8px;
+    width: 20px !important;
 
     &:hover {
       cursor: pointer;

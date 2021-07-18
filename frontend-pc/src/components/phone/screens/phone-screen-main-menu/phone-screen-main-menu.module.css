@@ -6,10 +6,17 @@
   -webkit-align-items: center;
   display: flex;
 }
-.phoneMainMenuWrapper > .mainMenuBtn {
-  background-color: #9bceb9;
+.phoneMainMenuWrapper > div {
+  background-color: #cacaca;
+  padding: 81px 24px;
+  border-radius: 41px;
+  -moz-border-radius: 41px;
+  -webkit-border-radius: 41px;
+}
+.phoneMainMenuWrapper > div > .mainMenuBtn {
+  background-color: #279467;
   padding: 13px;
-  font-size: 32px;
+  font-size: 58px;
   margin: 0 15px;
   color: #2a3531;
   border-radius: 17px;
@@ -21,7 +28,7 @@
   -o-transition: 0.5s;
   -webkit-transition: 0.5s;
 }
-.phoneMainMenuWrapper > .mainMenuBtn:hover {
+.phoneMainMenuWrapper > div > .mainMenuBtn:hover {
   background-color: #779c8d;
 }
 
