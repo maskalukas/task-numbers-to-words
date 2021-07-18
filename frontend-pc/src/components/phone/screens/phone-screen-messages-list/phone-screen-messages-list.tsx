@@ -9,6 +9,7 @@ import {RouteComponentProps, useHistory} from "react-router";
 import messagesListCss from "./phone-screen-messages-list.module.css";
 import {PhoneScreenTopBar} from "../../hoc/phone-screen-top-bar/phone-screen-top-bar";
 import { screenRoute as messageDetailScreenRoute } from "../phone-screen-message-detail/phone-screen-message-detail";
+import {PhoneScreenTotalNumbers} from "../../hoc/phone-screen-total-numbers/phone-screen-total-numbers";
 
 const messagesTitles = {
     all: "List of all messages",
@@ -45,11 +46,13 @@ export const PhoneScreenMessagesList = (props: RouteComponentProps<TMessagesList
                 <span className="title">{ messagesTitles[props.match.params.type] }</span>
             </PhoneScreenTopBar>
 
-            <div style={{ padding: 20, height: "311px", overflowY: "auto" }}>
+            <PhoneScreenTotalNumbers length={messagesList.length}></PhoneScreenTotalNumbers>
+
+            <div style={{ padding: 20, height: "289px", overflowY: "auto" }}>
                 {
                     messagesList.map(message => {
                         return (
-                            <div key={ message.id } className={ messagesListCss.messageListItem }
+                            <div title={ message.number } key={ message.id } className={ messagesListCss.messageListItem }
                                  onMouseDown={ (e) => onMouseClickMessageItem(e, message)}>
                                 <span>{ message.number }</span>
                             </div>

@@ -11,10 +11,10 @@ export const screenRoute = "main-menu";
 const messagesListTypeParameter: TMessagesListType = "all";
 
 const buttons: { icon: IconName, link: string }[] = [{
-    icon: "envelope",
+    icon: "phone",
     link: newCallScreenRoute
 },{
-    icon: "inbox",
+    icon: "envelope",
     link: messagesListScreenRoute + "/" + messagesListTypeParameter
 }]
 

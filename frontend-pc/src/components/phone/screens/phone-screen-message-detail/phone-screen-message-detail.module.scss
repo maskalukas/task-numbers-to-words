@@ -19,14 +19,22 @@
 }
 
 .phoneMessageDetailResponseBox {
-  background-color: $phone-bg-screen-light-grey;
   width: 100%;
   @include borderRadius(20px);
   @include boxSizing(border-box);
-  padding: 13px;
 
   > span {
-    margin: 0 5px;
+    background-color: $phone-bg-screen-light-grey;
     display: flex;
+    margin: 6px 5px;
+    @include borderRadius(12px);
+    padding: 6px;
   }
+}
+
+.phoneMessageDetailTitle {
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: help;
+  text-overflow: ellipsis;
 }

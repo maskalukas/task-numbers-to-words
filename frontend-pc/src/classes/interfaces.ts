@@ -22,7 +22,7 @@ export interface ICall {
 }
 
 export interface IMessage {
-    addNewMessage(response: any): void;
+    addNewMessage(response: any, number: string): void;
     getMessage(messageId: number): TMessageItem| undefined;
     getNewMessages(): TMessageItem[];
     getMessagesListByType(type: TMessagesListType): TMessageItem[];

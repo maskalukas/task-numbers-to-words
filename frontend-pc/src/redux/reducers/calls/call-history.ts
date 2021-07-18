@@ -8,7 +8,7 @@ export const callHistoryReducerMethods = {
    addCall(state: TCallsState, payload: PayloadAction<string>): void {
        const date = new Date();
 
-       state.history.push({
+       state.history.unshift({
            number: payload.payload,
            time: `${ date.getHours() }:${ date.getMinutes() }`
        })

@@ -8,6 +8,7 @@ import {Messages} from "../../../../classes/message";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import messageDetailCss from "./phone-screen-message-detail.module.css";
 import {PhoneScreenTopBar} from "../../hoc/phone-screen-top-bar/phone-screen-top-bar";
+import {PhoneScreenTotalNumbers} from "../../hoc/phone-screen-total-numbers/phone-screen-total-numbers";
 
 export const screenRoute = "message-detail";
 
@@ -30,12 +31,17 @@ export const PhoneScreenMessageDetail = (props: RouteComponentProps<TMessageDeta
             <PhoneScreenTopBar>
                 <div className={ messageDetailCss.phoneMessageDetailTopBar } style={{ height: "100%", width: "100%" }}>
                     <FontAwesomeIcon icon={["fas","user-circle"]}></FontAwesomeIcon>
-                    <span>From: { messageItem?.number }</span>
+                    <span className={ messageDetailCss.phoneMessageDetailTitle } title={ messageItem?.number }>From: { messageItem?.number }</span>
                 </div>
             </PhoneScreenTopBar>
-            <div style={{ padding: 15, overflowY: "scroll", height: 321 }}>
+
+            <PhoneScreenTotalNumbers length={messageItem?.response.length as number}></PhoneScreenTotalNumbers>
+
+            <div style={{ padding: 15, overflowY: "scroll", height: 299 }}>
                 <div className={ messageDetailCss.phoneMessageDetailResponseBox }>
-                    { messageItem?.response.map((response, index) => <span key={ index }>{ response }</span>) }
+                    { messageItem?.response.map((response, index) => {
+                        return <span  key={ index } title={ response } style={{ overflow: "hidden" }}>{ response }</span>
+                    })}
                 </div>
             </div>
         </div>

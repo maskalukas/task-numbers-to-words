@@ -1,4 +1,4 @@
-import {ICall, IMessage} from "./interfaces";
+import {ICall, IMessage, ISound} from "./interfaces";
 import {
     TAirplaneReducerProps,
     TCallHistoryReducerProps,
@@ -10,6 +10,7 @@ import {callsStoreActions} from "../redux/slices/calls-phone-slice";
 import {CallService} from "../services/call-service";
 import {TCallsState, TGeneralState, TMessagesState} from "../redux/interfaces";
 import {Messages} from "./message";
+import Sound from "./sound";
 
 export class Call implements ICall {
 
@@ -44,7 +45,10 @@ export class Call implements ICall {
             callService.call()
                 .then((response) => {
                     const sms: IMessage = new Messages(this.messagesState, this.dispatch);
-                    sms.addNewMessage(response);
+                    sms.addNewMessage(response, this.number as string);
+
+                    const sound: ISound = new Sound(this.generalState.volume, "sms-short.mp3");
+                    sound.runSound();
                 })
             return true;
         }

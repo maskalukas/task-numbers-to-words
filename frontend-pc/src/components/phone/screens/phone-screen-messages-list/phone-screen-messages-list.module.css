@@ -15,6 +15,10 @@
   font-weight: 600;
   color: #323232;
   margin-bottom: 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: help;
 }
 .messageListItem:hover {
   cursor: pointer;
