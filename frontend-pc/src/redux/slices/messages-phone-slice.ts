@@ -9,7 +9,8 @@ const messagesPhoneSlice = createSlice({
         messagesAddMessage: messagesReducerMethods.addMessage,
         messagesAddMessageIds: messagesReducerMethods.addNewMessageIds,
         messagesIncrementCounter: messagesReducerMethods.incrementCounter,
-        messagesDecrementCounter: messagesReducerMethods.decrementCounter
+        messagesDecrementCounter: messagesReducerMethods.decrementCounter,
+        messagesMarkMessageAsRead: messagesReducerMethods.markMessageAsRead
     }
 });
 
@@ -19,6 +20,7 @@ export const messagesStoreActions  = {
         addMessageIds: messagesPhoneSlice.actions.messagesAddMessageIds,
         incrementCounter: messagesPhoneSlice.actions.messagesIncrementCounter,
         decrementCounter: messagesPhoneSlice.actions.messagesDecrementCounter,
+        markMessageAsRead: messagesPhoneSlice.actions.messagesMarkMessageAsRead
     }
 }
 

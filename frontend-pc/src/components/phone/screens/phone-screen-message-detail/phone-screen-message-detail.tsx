@@ -2,13 +2,14 @@ import {TMessageItem} from "../../../../redux/reducers/types";
 import {useEffect, useLayoutEffect, useState} from "react";
 import { RouteComponentProps} from "react-router";
 import {TMessagesState} from "../../../../redux/interfaces";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {IReducersState} from "../../../../redux/store";
 import {Messages} from "../../../../classes/message";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import messageDetailCss from "./phone-screen-message-detail.module.css";
 import {PhoneScreenTopBar} from "../../hoc/phone-screen-top-bar/phone-screen-top-bar";
 import {PhoneScreenTotalNumbers} from "../../hoc/phone-screen-total-numbers/phone-screen-total-numbers";
+import {IMessage} from "../../../../classes/interfaces";
 
 export const screenRoute = "message-detail";
 
@@ -18,12 +19,15 @@ type TMessageDetailUrlProps = {
 
 export const PhoneScreenMessageDetail = (props: RouteComponentProps<TMessageDetailUrlProps>) => {
     const messagesState: TMessagesState = useSelector((state: IReducersState) => state.messagesState);
-    const [messageItem, setMessageItem] = useState<TMessageItem>()
+    const [messageItem, setMessageItem] = useState<TMessageItem>();
+    const dispatch = useDispatch();
 
     useLayoutEffect(() => {
-        const message = new Messages(messagesState, null as any);
+        const message: IMessage = new Messages(messagesState, dispatch);
         const messageIdNumber = Number(props.match.params.messageId);
+
         setMessageItem(message.getMessage(messageIdNumber));
+        message.markMessageAsRead(messageIdNumber);
     },[messageItem]);
 
     return (

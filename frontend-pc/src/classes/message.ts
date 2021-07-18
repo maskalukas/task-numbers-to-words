@@ -46,5 +46,9 @@ export class Messages implements IMessage {
         }
     }
 
+    public markMessageAsRead(messageId: number) {
+        this.dispatch(messagesStoreActions.messages.markMessageAsRead(messageId));
+    }
+
 
 }

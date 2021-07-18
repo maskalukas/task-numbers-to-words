@@ -21,6 +21,13 @@ export const messagesReducerMethods = {
         });
     },
 
+    markMessageAsRead(state: TMessagesState, action: PayloadAction<number>): void {
+        const indexOfId = state.newMessagesIds.indexOf(action.payload);
+        if(indexOfId != -1) {
+            state.newMessagesIds.splice(indexOfId,1);
+        }
+    },
+
     addNewMessageIds(state: TMessagesState, action: PayloadAction<number>) {
       state.newMessagesIds.unshift(action.payload);
     },

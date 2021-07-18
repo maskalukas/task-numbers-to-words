@@ -26,6 +26,7 @@ export interface IMessage {
     getMessage(messageId: number): TMessageItem| undefined;
     getNewMessages(): TMessageItem[];
     getMessagesListByType(type: TMessagesListType): TMessageItem[];
+    markMessageAsRead(messageId: number): void
 }
 
 export interface ISound {
