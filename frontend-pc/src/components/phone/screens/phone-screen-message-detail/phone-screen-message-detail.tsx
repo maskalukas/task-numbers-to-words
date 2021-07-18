@@ -7,6 +7,7 @@ import {IReducersState} from "../../../../redux/store";
 import {Messages} from "../../../../classes/message";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import messageDetailCss from "./phone-screen-message-detail.module.css";
+import {PhoneScreenTopBar} from "../../hoc/phone-screen-top-bar/phone-screen-top-bar";
 
 export const screenRoute = "message-detail";
 
@@ -26,11 +27,13 @@ export const PhoneScreenMessageDetail = (props: RouteComponentProps<TMessageDeta
 
     return (
         <div className={ messageDetailCss.phoneMessageDetailWrapper }>
-            <div className={ messageDetailCss.phoneMessageDetailTopBar }>
-                <FontAwesomeIcon icon={["fas","user-circle"]}></FontAwesomeIcon>
-                <span>From: { messageItem?.number }</span>
-            </div>
-            <div style={{ padding: 15, overflowY: "scroll", height: 353 }}>
+            <PhoneScreenTopBar>
+                <div className={ messageDetailCss.phoneMessageDetailTopBar } style={{ height: "100%", width: "100%" }}>
+                    <FontAwesomeIcon icon={["fas","user-circle"]}></FontAwesomeIcon>
+                    <span>From: { messageItem?.number }</span>
+                </div>
+            </PhoneScreenTopBar>
+            <div style={{ padding: 15, overflowY: "scroll", height: 321 }}>
                 <div className={ messageDetailCss.phoneMessageDetailResponseBox }>
                     { messageItem?.response.map((response, index) => <span key={ index }>{ response }</span>) }
                 </div>

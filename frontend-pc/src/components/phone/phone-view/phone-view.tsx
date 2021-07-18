@@ -12,13 +12,15 @@ import {
     PhoneScreenMessageDetail,
     screenRoute as messageScreenRoute
 } from "../screens/phone-screen-message-detail/phone-screen-message-detail";
+import React from "react";
 
 const PhoneView = () => {
 
     return (
-        <BrowserRouter>
+        <React.Fragment>
             <div className={phoneViewCss.phoneView}>
                 <PhoneTopBar></PhoneTopBar>
+
                 <Route path={'/' + mainMenuScreenRoute}>
                     <PhoneScreenMainMenu></PhoneScreenMainMenu>
                 </Route>
@@ -29,7 +31,7 @@ const PhoneView = () => {
                 <Route path={ '/'+ messageScreenRoute+'/:messageId' } component={ PhoneScreenMessageDetail }/>
                 <Route path={ '/'+  messagesListScreenRoute + '/:type' } component={ PhoneScreenMessagesList } />
             </div>
-        </BrowserRouter>
+        </React.Fragment>
     )
 }
 

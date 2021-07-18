@@ -1,33 +1,62 @@
 import { TMessagesListType, TMessagesState} from "../../../../redux/interfaces";
-import {useEffect, useState} from "react";
+import {BaseSyntheticEvent, useEffect, useState} from "react";
 import { useSelector} from "react-redux";
 import {IReducersState} from "../../../../redux/store";
 import {Messages} from "../../../../classes/message";
 import {IMessage} from "../../../../classes/interfaces";
 import {TMessageItem} from "../../../../redux/reducers/types";
-import {RouteComponentProps} from "react-router";
+import {RouteComponentProps, useHistory} from "react-router";
+import messagesListCss from "./phone-screen-messages-list.module.css";
+import {PhoneScreenTopBar} from "../../hoc/phone-screen-top-bar/phone-screen-top-bar";
+import { screenRoute as messageDetailScreenRoute } from "../phone-screen-message-detail/phone-screen-message-detail";
 
-export const screenRoute = "messages-list";
+const messagesTitles = {
+    all: "List of all messages",
+    news: "List of new messages"
+}
+
 
 type TMessagesListUrlProps = {
     type: TMessagesListType;
 }
 
+export const screenRoute = "messages-list";
+
+
 export const PhoneScreenMessagesList = (props: RouteComponentProps<TMessagesListUrlProps>) => {
     const messagesState: TMessagesState = useSelector((state: IReducersState) => state.messagesState);
-
+    const history = useHistory();
     const [messagesList, setMessagesList] = useState<TMessageItem[]>([]);
 
     useEffect(() => {
         const messages: IMessage = new Messages(messagesState, null as any);
         setMessagesList(messages.getMessagesListByType(props.match.params.type));
-        setTimeout(() => {
-            console.log(messagesList);
-        })
-    })
+    },[props.match.params.type])
+
+    const onMouseClickMessageItem = (event: BaseSyntheticEvent, messageItem: TMessageItem) => {
+        history.push({
+            pathname: '/' + messageDetailScreenRoute + "/" + messageItem.id,
+        });
+    }
 
     return (
-        <div>
+        <div style={{ height: "100%" }}>
+            <PhoneScreenTopBar>
+                <span className="title">{ messagesTitles[props.match.params.type] }</span>
+            </PhoneScreenTopBar>
+
+            <div style={{ padding: 20, height: "311px", overflowY: "auto" }}>
+                {
+                    messagesList.map(message => {
+                        return (
+                            <div key={ message.id } className={ messagesListCss.messageListItem }
+                                 onMouseDown={ (e) => onMouseClickMessageItem(e, message)}>
+                                <span>{ message.number }</span>
+                            </div>
+                        )
+                    })
+                }
+            </div>
 
         </div>
     )

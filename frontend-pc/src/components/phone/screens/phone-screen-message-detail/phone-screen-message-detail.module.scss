@@ -1,4 +1,5 @@
 @import "../../../../../scss/mixins";
+@import "../../../../../scss/colors";
 
 .phoneMessageDetailWrapper {
   height: 100%;
@@ -7,21 +8,18 @@
 }
 
 .phoneMessageDetailTopBar {
-  background-color: #4e81b8;
-  padding: 10px 15px;
-  color: #fff;
-  display: flex;
   @include alignItems(center);
+  display: flex;
 
   > svg {
-    color: #24415d;
+    color: #003b33;
     font-size: 40px;
     margin-right: 25px;
   }
 }
 
 .phoneMessageDetailResponseBox {
-  background-color: #28588b;
+  background-color: $phone-bg-screen-light-grey;
   width: 100%;
   @include borderRadius(20px);
   @include boxSizing(border-box);

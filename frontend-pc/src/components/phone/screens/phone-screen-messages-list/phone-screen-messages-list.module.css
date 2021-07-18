@@ -1,0 +1,28 @@
+.messagesListTopBar {
+  background-color: #00a991;
+}
+
+.messageListItem {
+  background-color: #cacaca;
+  padding: 5px 15px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  font-weight: 600;
+  color: #323232;
+  margin-bottom: 5px;
+}
+.messageListItem:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+  -moz-transform: scale(1.02);
+  -o-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  background-color: #a3a3a3;
+}
+
+/*# sourceMappingURL=phone-screen-messages-list.module.css.map */

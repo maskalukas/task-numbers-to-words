@@ -1,0 +1,16 @@
+.hocScreenTopBar {
+  background-color: #00a991;
+  height: 40px;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+  align-items: center;
+  -webkit-align-items: center;
+}
+.hocScreenTopBar > .title {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=phone-screen-top-bar.module.css.map */

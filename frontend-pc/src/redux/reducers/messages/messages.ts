@@ -9,18 +9,23 @@ export const messagesReducerInitial: TMessagesState = {
     counterMessages: 0
 }
 
-const test: TMessageItem = {
-    id: 68,
-    number: "51265",
-    response: [],
-    time :"14:15"
-};
+for(let x = 0; x < 100; x++) {
+    const test: TMessageItem = {
+        id: x,
+        number: "51265",
+        response: [],
+        time :"14:15"
+    };
 
-for(let i = 0; i < 80; i++) {
-    test.response.push("abc"+i);
+    for(let i = 0; i < 80; i++) {
+        test.response.push("abc"+i);
+    }
+
+    messagesReducerInitial.messages.push(test);
 }
 
-messagesReducerInitial.messages.push(test);
+messagesReducerInitial.newMessagesIds.push(1,4);
+
 
 export const messagesReducerMethods = {
     addMessage(state: TMessagesState, action: PayloadAction<TMessageItem>): any {
