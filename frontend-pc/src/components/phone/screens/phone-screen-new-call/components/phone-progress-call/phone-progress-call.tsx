@@ -1,13 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import phoneProgressCallCss from "./phone-progress-call.module.css";
-import phoneNewCallCss from "../../phone-screen-new-call.module.css";
-import {IApiRequest} from "../../../../../../services/interfaces";
 import {Call} from "../../../../../../classes/call";
 import {TCallsState, TGeneralState, TMessagesState} from "../../../../../../redux/interfaces";
 import {useDispatch, useSelector} from "react-redux";
 import {IReducersState} from "../../../../../../redux/store";
-import configure from "../../../../../../configure";
 
+/**
+ * Component representing that the phone is currently calling.
+ * It shows the element over the whole screen with numbers and the cancel request button.
+ * @param props = numbers => This number will be shown on the screen.
+ */
 export const PhoneProgressCall = (props: {numbers: string}) => {
 
     const phoneGeneralState: TGeneralState = useSelector((state: IReducersState) => state.generalState);
@@ -15,6 +17,9 @@ export const PhoneProgressCall = (props: {numbers: string}) => {
     const messagesState: TMessagesState = useSelector((state: IReducersState) => state.messagesState);
     const dispatch = useDispatch();
 
+    /**
+     * Event: Abort the call (request)
+     */
     const onMouseClickCancel = () => {
         const call = new Call(phoneGeneralState, phoneCallState, messagesState, dispatch);
         call.cancelCall();

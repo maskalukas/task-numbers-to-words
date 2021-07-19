@@ -11,16 +11,26 @@ import {PhoneScreenTopBar} from "../../hoc/phone-screen-top-bar/phone-screen-top
 import {PhoneScreenTotalNumbers} from "../../hoc/phone-screen-total-numbers/phone-screen-total-numbers";
 import {IMessage} from "../../../../classes/interfaces";
 
+/**
+ * The route that represents this screen.
+ */
 export const screenRoute = "message-detail";
 
+/**
+ *
+ */
 type TMessageDetailUrlProps = {
     messageId: string;
 }
-
+/**
+ * Screen: The defail of certain message
+ * @param props = messageId => According to id the component can find the message.
+ */
 export const PhoneScreenMessageDetail = (props: RouteComponentProps<TMessageDetailUrlProps>) => {
     const messagesState: TMessagesState = useSelector((state: IReducersState) => state.messagesState);
-    const [messageItem, setMessageItem] = useState<TMessageItem>();
     const dispatch = useDispatch();
+    // The message for this detail.
+    const [messageItem, setMessageItem] = useState<TMessageItem>();
 
     useLayoutEffect(() => {
         const message: IMessage = new Messages(messagesState, dispatch);

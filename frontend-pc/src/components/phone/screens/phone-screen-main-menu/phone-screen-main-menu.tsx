@@ -7,9 +7,14 @@ import { screenRoute as newCallScreenRoute } from "../phone-screen-new-call/phon
 import { screenRoute as messagesListScreenRoute } from "../phone-screen-messages-list/phone-screen-messages-list";
 import {TMessagesListType} from "../../../../redux/interfaces";
 
+/**
+ * The route that represents this screen.
+ */
 export const screenRoute = "main-menu";
+
 const messagesListTypeParameter: TMessagesListType = "all";
 
+// buttons on the main screen
 const buttons: { icon: IconName, link: string }[] = [{
     icon: "phone",
     link: newCallScreenRoute
@@ -18,9 +23,17 @@ const buttons: { icon: IconName, link: string }[] = [{
     link: messagesListScreenRoute + "/" + messagesListTypeParameter
 }]
 
+/**
+ * Screen: the main menu
+ */
 export const PhoneScreenMainMenu = () => {
 
     const history = useHistory();
+    /**
+     * Event: Clicking on the buttons.
+     *        Redirects on the target screen
+     * @param route = The route that the screen will be redirected.
+     */
     const handleOnClick = (event: MouseEvent, route: string) => history.push({
         pathname: '/' + route,
     });

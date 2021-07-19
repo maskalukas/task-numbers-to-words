@@ -8,13 +8,15 @@ import {TCallsState, TGeneralState, TMessagesState} from "../../../../redux/inte
 import {useDispatch, useSelector} from "react-redux";
 import {IReducersState} from "../../../../redux/store";
 import {ICall, IMessage} from "../../../../classes/interfaces";
-import {Messages} from "../../../../classes/message";
 import {PhoneProgressCall} from "./components/phone-progress-call/phone-progress-call";
-import {IApiRequest} from "../../../../services/interfaces";
-import {CallAbort} from "../../../../services/call-abort";
-
+/**
+ * The route that represents this screen.
+ */
 export const screenRoute = "new-call";
 
+/**
+ * Screen: Represents the "new call" or keyboard with the number input
+ */
 export const PhoneScreenNewCall = () => {
 
     const phoneGeneralState: TGeneralState = useSelector((state: IReducersState) => state.generalState);
@@ -22,21 +24,30 @@ export const PhoneScreenNewCall = () => {
     const messagesState: TMessagesState = useSelector((state: IReducersState) => state.messagesState);
     const dispatch = useDispatch();
 
+    // new number that is added from the keyboard
     const [numbers, setNewNumber] = useState<string[]>([]);
+    // all added numbers
     const [currentInputNumbers, setCurrentInputNumbers] = useState<string>("");
+    // if it is checked that converting will find only real words
     const [filter, setFilter] = useState<boolean>(false);
 
-
+    /**
+     * Callback for keyboard
+     */
     const onMouseClickNumberButtonCallback = (clickedNumber: string) => {
         setNewNumber(prevNumbersArr => [...prevNumbersArr, clickedNumber])
     }
 
+    /**
+     * Callback for input number
+     */
     const onInputNumbersChange = (inputNumbers: string) => {
         setCurrentInputNumbers(inputNumbers);
     }
 
-    const s = useRef<IApiRequest<any>>();
-
+    /**
+     * Event: Sends a new request
+     */
     const onMouseClickCallButton = async () => {
         const call: ICall = new Call(
             phoneGeneralState,
@@ -54,7 +65,9 @@ export const PhoneScreenNewCall = () => {
 
     }
 
-
+    /**
+     * Changes state of the filter
+     */
     const onMouseClickFilterCheck = () => {
         setFilter(state => !state);
     }
@@ -65,12 +78,12 @@ export const PhoneScreenNewCall = () => {
             <PhoneKeyboard callback={ onMouseClickNumberButtonCallback }></PhoneKeyboard>
 
 
-
             <div className={ newCallScreenCss.callButtonsLine }>
+
 
                 {
                     phoneCallState.callProgress.status &&
-                        <PhoneProgressCall numbers={currentInputNumbers}></PhoneProgressCall>
+                    <PhoneProgressCall numbers={currentInputNumbers}></PhoneProgressCall>
                 }
 
                 <FontAwesomeIcon icon={["fas","phone"]}

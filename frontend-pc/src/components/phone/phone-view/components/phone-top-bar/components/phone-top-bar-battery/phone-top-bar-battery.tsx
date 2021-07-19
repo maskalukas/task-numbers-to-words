@@ -7,6 +7,11 @@ import {Battery} from "../../../../../../../classes/battery";
 import {IBattery, TBatteryPart} from "../../../../../../../classes/interfaces";
 import phoneTopBatteryCss from "./phone-top-bar-battery.module.css";
 
+/**
+ * Shows the small font awesome battery icon.
+ * Represents the state of the battery.
+ * It changes according to the stateNumber from battery store.
+ */
 const PhoneTopBarBattery = () => {
     const phoneGeneralState: TGeneralState = useSelector((state: IReducersState) => state.generalState);
     const dispatch = useDispatch();

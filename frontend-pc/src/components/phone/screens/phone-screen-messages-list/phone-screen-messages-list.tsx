@@ -21,12 +21,21 @@ type TMessagesListUrlProps = {
     type: TMessagesListType;
 }
 
+/**
+ * The route that represents this screen.
+ */
 export const screenRoute = "messages-list";
 
-
+/**
+ * Screen: Shows the list of messages by type: all | news
+ * @param props = type = all => Shows all the messages. news => Shows only the news messages.
+ * @constructor
+ */
 export const PhoneScreenMessagesList = (props: RouteComponentProps<TMessagesListUrlProps>) => {
     const messagesState: TMessagesState = useSelector((state: IReducersState) => state.messagesState);
     const history = useHistory();
+
+    // the list of messages
     const [messagesList, setMessagesList] = useState<TMessageItem[]>([]);
 
     useEffect(() => {
@@ -34,6 +43,9 @@ export const PhoneScreenMessagesList = (props: RouteComponentProps<TMessagesList
         setMessagesList(messages.getMessagesListByType(props.match.params.type));
     },[props.match.params.type])
 
+    /**
+     * Event: After clicking we will be redirected on the detail of clicked message.
+     */
     const onMouseClickMessageItem = (event: BaseSyntheticEvent, messageItem: TMessageItem) => {
         history.push({
             pathname: '/' + messageDetailScreenRoute + "/" + messageItem.id,

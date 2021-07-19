@@ -8,6 +8,10 @@ import {useDispatch, useSelector} from "react-redux";
 import {IReducersState} from "../../../../../../../redux/store";
 import {generalStoreActions} from "../../../../../../../redux/slices/general-phone-slice";
 
+/**
+ *
+ * @constructor
+ */
 const PhoneTopBarBrightnessSlider = () => {
 
     const phoneGeneralState: TGeneralState = useSelector((state: IReducersState) => state.generalState);

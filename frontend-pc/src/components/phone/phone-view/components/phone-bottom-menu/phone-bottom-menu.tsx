@@ -5,13 +5,22 @@ import {useHistory} from "react-router";
 import {BaseSyntheticEvent} from "react";
 import { screenRoute as mainMenuScreenRoute } from "../../../screens/phone-screen-main-menu/phone-screen-main-menu";
 
+/**
+ * The bottom menu that contains: the back button, the main menu
+ */
 const PhoneBottomMenu = () => {
     const history = useHistory();
 
+    /**
+     * Redirect to the previous route
+     */
     const onMouseClickBack = (event: BaseSyntheticEvent) => {
         history.goBack();
     }
 
+    /**
+     * Redirect to the main menu screen
+     */
     const onMouseClickMainMenu = (event: BaseSyntheticEvent) => {
         history.push({
             pathname: "/" + mainMenuScreenRoute
