@@ -5,6 +5,10 @@ import {TCallsState} from "../../interfaces";
  * The initial store for data of calling.
  */
 export const callProgressReducerInitial: TCallProgressReducerProps = {
+    /**
+     * If the phone is currently calling.
+     * It means, if the phone waits on some response.
+     */
     status: false
 }
 
