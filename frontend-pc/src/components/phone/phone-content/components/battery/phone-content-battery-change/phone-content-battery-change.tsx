@@ -6,6 +6,9 @@ import {Battery} from "../../../../../../classes/battery";
 import {TGeneralState} from "../../../../../../redux/interfaces";
 import {IReducersState} from "../../../../../../redux/store";
 
+/**
+ * The component that shows the empty battery.
+ */
 export const PhoneContentBatteryChange = () => {
     const phoneGeneralState: TGeneralState = useSelector((state: IReducersState) => state.generalState);
     const dispatch = useDispatch();

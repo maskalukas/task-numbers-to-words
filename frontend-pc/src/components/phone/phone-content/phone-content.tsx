@@ -9,6 +9,7 @@ import { phoneContentId } from "../../../constants/elements-ids";
 import {PhoneContentBatteryChange} from "./components/battery/phone-content-battery-change/phone-content-battery-change";
 import {BrowserRouter} from "react-router-dom";
 
+
 const PhoneContent = () => {
     const phoneGeneralState: TGeneralState = useSelector((state: IReducersState) => state.generalState);
 
@@ -16,9 +17,9 @@ const PhoneContent = () => {
         <BrowserRouter>
             <div id={phoneContentId}
                  className={` 
-             ${phoneContentCss.phoneContent} 
-             ${ phoneGeneralState.power.status ? phoneContentCss.on : phoneContentCss.off} 
-             `}
+                     ${phoneContentCss.phoneContent} 
+                     ${ phoneGeneralState.power.status ? phoneContentCss.on : phoneContentCss.off} 
+             `     }
                  style={{
                      filter: `brightness(${phoneGeneralState.brightness.number})`,
                  }}>
@@ -31,7 +32,7 @@ const PhoneContent = () => {
                 }
 
                 {phoneGeneralState.battery.isShowedNoBatteryIcon &&
-                <PhoneContentBatteryChange></PhoneContentBatteryChange>
+                    <PhoneContentBatteryChange></PhoneContentBatteryChange>
                 }
             </div>
         </BrowserRouter>

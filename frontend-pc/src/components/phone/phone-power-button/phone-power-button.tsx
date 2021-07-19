@@ -6,14 +6,22 @@ import {useState} from "react";
 import {Battery} from "../../../classes/battery";
 import {generalStoreActions} from "../../../redux/slices/general-phone-slice";
 
+/**
+ * The aside button that either turns on or off the phone.
+ * @constructor
+ */
 const PhonePowerButton = () => {
 
     const phoneGeneralState: TGeneralState = useSelector((state: IReducersState) => state.generalState);
     const dispatch = useDispatch();
     const battery = new Battery(phoneGeneralState.battery, dispatch);
 
+    // This state is here because of animations, after clicking, the classname with animation is set.
     const [clicked, setClicked] = useState(false);
 
+    /**
+     * Either turns on or off the phone after clicking or if the phone has not battery then goes off.
+     */
     const changePhoneIsTurned = () => {
         setClicked(true);
 

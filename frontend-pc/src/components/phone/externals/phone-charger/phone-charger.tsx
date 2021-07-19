@@ -9,18 +9,26 @@ import {useDispatch, useSelector} from "react-redux";
 import {IReducersState} from "../../../../redux/store";
 import {generalStoreActions} from "../../../../redux/slices/general-phone-slice";
 
+/**
+ * The charger that is on the bottom.
+ * It is possible with mouse moving either top or down and charge the phone.
+ */
 const PhoneCharger = () => {
-
     const cabelHeightInitial = 40;
     const [positionBottom, setPositionBottom] = useState(80);
     const [cabelHeight, setCabelHeight] = useState(cabelHeightInitial);
+    // if is the charger plugged
     const [isPlugged, setIsPlugged] = useState(false);
 
     const phoneGeneralState: TGeneralState = useSelector((state: IReducersState) => state.generalState);
-
     const dispatch = useDispatch();
+
     const battery = new Battery(phoneGeneralState.battery, dispatch);
 
+    /**
+     * Event: mouse down and trigger events: mouseMove and mouseUp
+     * @param event
+     */
     const onMouseDown = (event: any) => {
         const phoneElement = document.getElementById(PHONE_ID) as HTMLElement;
         const phoneElementHeight = phoneElement.offsetHeight;
@@ -34,6 +42,7 @@ const PhoneCharger = () => {
             const newPositionBottom = window.innerHeight - event.clientY - start;
             const newCabelHeight = newPositionBottom - cabelHeightInitial;
             cabelTop = newCabelHeight + 32 + 5;
+
             let newCabelTop = window.innerHeight - cabelTop;
             let isClosest = newCabelTop - phoneElementBottom;
 
@@ -53,6 +62,8 @@ const PhoneCharger = () => {
             }
         }
         window.addEventListener("mousemove", onMouseMove);
+
+
 
         const onMouseUp = () => {
             window.removeEventListener("mouseup", onMouseUp);

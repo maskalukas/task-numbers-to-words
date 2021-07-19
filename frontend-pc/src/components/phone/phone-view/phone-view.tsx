@@ -14,8 +14,10 @@ import {
 } from "../screens/phone-screen-message-detail/phone-screen-message-detail";
 import React, {useEffect} from "react";
 
+/**
+ * Inside of screen.
+ */
 const PhoneView = () => {
-
 
     return (
         <React.Fragment>
