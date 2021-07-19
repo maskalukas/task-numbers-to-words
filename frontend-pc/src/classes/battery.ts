@@ -1,13 +1,21 @@
 import {IBattery, TBatteryPart, TBatteryPartsNames} from "./interfaces";
 import {TBatteryReducerProps} from "../redux/reducers/types";
-import { Dispatch, AnyAction } from "redux";
+import { Dispatch } from "redux";
 import {generalStoreActions} from "../redux/slices/general-phone-slice";
 
+/** @inheritDoc */
 export class Battery implements IBattery {
 
+    /** @inheritDoc */
     private readonly batteryState: TBatteryReducerProps;
+
+    /** @inheritDoc */
     private readonly dispatch: Dispatch;
 
+    /**
+     * The list of the battery parts.
+     * range => If the numberStatus (batteryStore) is in this range then that part is used.
+     */
     private static readonly TYPES: { name: TBatteryPartsNames, color: string, range: [number, number] }[] = [{
         name: "battery-empty",
         color: "e41414", // red

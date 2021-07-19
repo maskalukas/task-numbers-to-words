@@ -6,15 +6,20 @@ import {CallService} from "../services/call-service";
 import {TCallsState, TGeneralState, TMessagesState} from "../redux/interfaces";
 import {Messages} from "./message";
 import Sound from "./sound";
-import {IApiRequest, ICallService} from "../services/interfaces";
+import {ICallService} from "../services/interfaces";
 import {CallAbort} from "../services/call-abort";
 
+/** @inheritDoc */
 export class Call implements ICall {
-
+    /** @inheritDoc */
     private generalState: TGeneralState;
+    /** @inheritDoc */
     private callState: TCallsState;
+    /** @inheritDoc */
     private messagesState: TMessagesState;
+    /** @inheritDoc */
     private dispatch: Dispatch;
+    /** The number that will be converted */
     private number: string | undefined;
 
     public constructor(
@@ -29,18 +34,20 @@ export class Call implements ICall {
         this.dispatch = dispatch;
     }
 
+    /** @inheritDoc */
     public setNumber(inputNumber: string): void {
         this.number = inputNumber;
     }
 
-    public call(filter: boolean): Promise<IApiRequest<any>> | undefined {
+    /** @inheritDoc */
+    public call(filter: boolean): Promise<string[]> | undefined {
         if(this.number && !this.generalState.airplane.status) {
             this.dispatch(callsStoreActions.callProgres.call());
-            this.dispatch(callsStoreActions.callHistory.addCall(this.number));
 
             const callService: ICallService = new CallService();
-            let callServicePromise: Promise<IApiRequest<any>>;
+            let callServicePromise: Promise<string[]>;
 
+            // send the request
             if(filter) {
                 callServicePromise = callService.callWithFilter(this.number)
             } else {
@@ -48,11 +55,13 @@ export class Call implements ICall {
             }
 
             return callServicePromise.then((response) => {
-                console.log(response);
-                console.log("Response:", response.response);
-                const sms: IMessage = new Messages(this.messagesState, this.dispatch);
-                sms.addNewMessage(response.response, this.number as string);
+                console.log("Response:", response);
 
+                // save the message
+                const sms: IMessage = new Messages(this.messagesState, this.dispatch);
+                sms.addNewMessage(response.join(""), this.number as string);
+
+                // trigger sms sound
                 const sound: ISound = new Sound(this.generalState.volume, "sms-short.mp3");
                 sound.runSound();
 
@@ -65,6 +74,7 @@ export class Call implements ICall {
         return undefined;
     }
 
+    /** @inheritDoc */
     public cancelCall(): void {
         this.dispatch(callsStoreActions.callProgres.cancelCall());
         CallAbort.getSingleton().abortRequest();
