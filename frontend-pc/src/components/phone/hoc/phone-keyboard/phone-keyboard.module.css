@@ -39,5 +39,9 @@
 .phoneKeyboardButton > .chars {
   font-size: 11px;
 }
+.phoneKeyboardButton.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
 
 /*# sourceMappingURL=phone-keyboard.module.css.map */

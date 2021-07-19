@@ -39,5 +39,10 @@
   background: #323232;
   padding: 18px 28px;
   @include borderRadius(18px);
-  text-align: center;
+  display: flex;
+  @include flexDirection(column);
+  @include justifyContent(center);
+  > img {
+    margin: 0 auto;
+  }
 }

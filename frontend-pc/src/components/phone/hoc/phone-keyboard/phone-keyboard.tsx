@@ -54,7 +54,8 @@ export const PhoneKeyboard = (props: { callback: (num: string) => any }) => {
         <div className={ phoneKeyboardButtonCss.phoneKeyboardButtonWrap }>
             {items.map((item) => {
                 return (
-                    <div className={ phoneKeyboardButtonCss.phoneKeyboardButton } key={item.value} onMouseDown={(event) => onMouseClick(event, item)}>
+                    <div className={ `${phoneKeyboardButtonCss.phoneKeyboardButton} ${!item.chars ? phoneKeyboardButtonCss.disabled : ''}` }
+                         key={item.value} onMouseDown={(event) => onMouseClick(event, item)}>
                         <span>{ item.value }</span>
                         <span className={ phoneKeyboardButtonCss.chars }>{ item.chars }</span>
                     </div>

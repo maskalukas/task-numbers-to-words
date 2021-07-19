@@ -54,7 +54,15 @@
   border-radius: 18px;
   -moz-border-radius: 18px;
   -webkit-border-radius: 18px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+.phoneCallProgressNumberBox > img {
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=phone-progress-call.module.css.map */
