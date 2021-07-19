@@ -1,19 +1,24 @@
-import {StyleSheet, Text, TextInput, View} from "react-native";
-import React from "react";
+import {StyleSheet, Text, View} from "react-native";
+import React, {useEffect, useState} from "react";
 
 const styles = StyleSheet.create({
     input: {
         backgroundColor: "#d4d4d4",
         height: 100,
-        display:"flex",
         justifyContent: "center",
+        alignItems: "center",
+        width: "100%"
+    },
+    numbers: {
+        fontSize: 35,
     }
 })
 
-export const NumbersInput = () => {
+export const NumbersInput = (props: { numbers: string }) => {
+
     return (
         <View style={ styles.input }>
-            <TextInput showSoftInputOnFocus={false}></TextInput>
+            <Text style={styles.numbers}>{ props.numbers }</Text>
         </View>
     )
 }

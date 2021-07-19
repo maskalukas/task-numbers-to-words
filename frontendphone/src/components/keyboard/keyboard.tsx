@@ -1,13 +1,12 @@
 import React from "react";
 import {StyleSheet, Text, TextInput, View} from "react-native";
 import KeyboardButton from "./keyboard-button";
-
 export type TButtonItem = {
     value: number;
     chars: string|null;
 }
 
-const buttons: TButtonItem[] = [{
+const buttons: TButtonItem[]  = [{
     value: 1,
     chars: null
 },{
@@ -48,14 +47,15 @@ const styles = StyleSheet.create({
 
 
 
-const Keyboard = () => {
+const Keyboard = (props: { callback: Function }) => {
+
 
     return (
         <View style={styles.keyboard}>
             {
-               buttons.map(button => {
-                   return <KeyboardButton key={ button.value } button={ button }></KeyboardButton>
-               })
+                buttons.map(button => {
+                    return <KeyboardButton key={ button.value } button={ button } callback={props.callback}></KeyboardButton>
+                })
             }
         </View>
     )

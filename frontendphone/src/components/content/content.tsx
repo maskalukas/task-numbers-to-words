@@ -6,17 +6,37 @@ const styles = StyleSheet.create({
         backgroundColor: "#e0e0e0",
         margin: 15,
         borderRadius: 10,
-        padding: 20
+        padding: 20,
+        display: "flex",
+    },
+    word: {
+        fontSize: 20,
+        backgroundColor: "#9a9a9a",
+        alignSelf: 'flex-start',
+        paddingLeft: 10,
+        paddingRight: 10,
+        paddingTop: 5,
+        paddingBottom: 5,
+        marginBottom: 5,
+        borderRadius: 10
     }
 });
 
-const contentHeight = (Dimensions.get("window").height - 450);
+const contentHeight = (Dimensions.get("window").height - 540);
 
-const Content = () => {
+const Content = (props: { response: string[] }) => {
     return (
         <View style={ styles.content }>
             <ScrollView style={{ height: contentHeight }}>
-                <Text>cau</Text>
+                {
+                    props.response.map((word,i) => {
+                        return (
+                            <View key={ i } style={styles.word}>
+                                <Text>{ word }</Text>
+                            </View>
+                        )
+                    })
+                }
             </ScrollView>
         </View>
     )
