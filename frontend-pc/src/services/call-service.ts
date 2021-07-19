@@ -3,10 +3,13 @@ import {ICallService} from "./interfaces";
 
 export class CallService extends ApiService implements ICallService {
 
-    public call(): Promise<string[]> {
-        return new Promise((resolve) => {
-            resolve(["abc","add","acc"])
-        });
+    public constructor() {
+        super();
+        this.appendUrl("/call/")
+    }
+
+    public call(numbers: string): Promise<string[]> {
+        return this.GET(numbers + "/nofilter");
     }
 
 }

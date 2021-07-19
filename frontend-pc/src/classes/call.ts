@@ -42,8 +42,9 @@ export class Call implements ICall {
             this.dispatch(callsStoreActions.callHistory.addCall(this.number));
 
             const callService = new CallService();
-            callService.call()
+            callService.call(this.number)
                 .then((response) => {
+                    console.log(response);
                     const sms: IMessage = new Messages(this.messagesState, this.dispatch);
                     sms.addNewMessage(response, this.number as string);
 

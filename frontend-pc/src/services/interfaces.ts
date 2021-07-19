@@ -1,3 +1,3 @@
 export interface ICallService {
-    call(): Promise<string[]>
+    call(numbers: string): Promise<string[]>
 }

@@ -11,6 +11,7 @@ export class CallController {
 
     public async getCharactersFromNumbersWithouFilter(req: Request,res: Response,next: any) {
         const result = await this.callService.convertNumbersToCharacters(req.params.numbers);
+        res.header("Access-Control-Allow-Origin", "*");
         res.send(result);
     }
 
