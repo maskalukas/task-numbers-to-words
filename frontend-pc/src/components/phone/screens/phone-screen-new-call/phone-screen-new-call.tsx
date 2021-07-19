@@ -21,6 +21,7 @@ export const PhoneScreenNewCall = () => {
 
     const [numbers, setNewNumber] = useState<string[]>([]);
     const [currentInputNumbers, setCurrentInputNumbers] = useState<string>("");
+    const [filter, setFilter] = useState<boolean>(false);
 
     const onMouseClickNumberButtonCallback = (clickedNumber: string) => {
         setNewNumber(prevNumbersArr => [...prevNumbersArr, clickedNumber])
@@ -38,9 +39,12 @@ export const PhoneScreenNewCall = () => {
             dispatch
         );
         call.setNumber(currentInputNumbers);
-        call.call();
+        call.call(filter);
     }
 
+    const onMouseClickFilterCheck = () => {
+        setFilter(state => !state);
+    }
 
     return (
         <div>
@@ -51,6 +55,10 @@ export const PhoneScreenNewCall = () => {
                 <FontAwesomeIcon icon={["fas","phone"]}
                                  style={phoneGeneralState.airplane.status ? { cursor: "not-allowed", opacity: "0.9", background: "#c4c4c4", color: "grey" } : {}}
                                  className={ newCallScreenCss.callButton } onMouseDown={ onMouseClickCallButton }></FontAwesomeIcon>
+
+                <FontAwesomeIcon icon={["fas","filter"]}
+                                 className={ `${filter ? newCallScreenCss.filterActivated : ''} ${newCallScreenCss.filterCheck}` }
+                                 onMouseDown={ onMouseClickFilterCheck }></FontAwesomeIcon>
             </div>
         </div>
     )

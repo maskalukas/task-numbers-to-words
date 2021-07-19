@@ -8,8 +8,12 @@ export class CallService extends ApiService implements ICallService {
         this.appendUrl("/call/")
     }
 
-    public call(numbers: string): Promise<string[]> {
+    public callWithoutFilter(numbers: string): Promise<string[]> {
         return this.GET(numbers + "/nofilter");
+    }
+
+    public callWithFilter(numbers: string): Promise<string[]> {
+        return this.GET(numbers + "/withfilter");
     }
 
 }

@@ -17,8 +17,8 @@ export interface IBattery {
 
 
 export interface ICall {
-    call(): boolean;
     setNumber(inputNumber: string): void;
+    call(filter: boolean): void;
 }
 
 export interface IMessage {

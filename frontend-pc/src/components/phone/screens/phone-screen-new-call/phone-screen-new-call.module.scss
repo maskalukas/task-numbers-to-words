@@ -19,4 +19,26 @@
   display: flex;
   @include justifyContent(center);
   margin-top: 20px;
+  @include alignItems(center);
+}
+
+.filterActivated {
+  background-color: #cddc39 !important;
+  color: #4b5017 !important;
+}
+
+.filterCheck {
+  background: #e8e8e8;
+  padding: 13px 18px;
+  color: #686868;
+  height: 25px;
+  width: 25px;
+  @include borderRadius(20px);
+  margin-left: 25px;
+  cursor: pointer;
+  @include transition(0.5s);
+
+  &:hover {
+    @include transform(scale(1.05));
+  }
 }

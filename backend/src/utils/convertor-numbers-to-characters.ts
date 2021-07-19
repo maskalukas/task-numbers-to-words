@@ -1,6 +1,10 @@
+import {  readFileSync } from 'fs';
+
 export class ConvertorNumbersToCharacters {
 
     private readonly numberForConverting: string;
+    private filter: boolean;
+    private words: string[] = [];
 
     private static keyboard = {
         1: [],
@@ -15,29 +19,70 @@ export class ConvertorNumbersToCharacters {
         0: []
     }
 
-    public constructor(numberForConverting: string) {
+    public constructor(numberForConverting: string, filter: boolean = false) {
         this.numberForConverting = numberForConverting;
+        this.filter = filter;
+
+        if(this.filter) {
+            this.words = readFileSync("./words-list/list.txt", "utf8").split("\n");
+        }
     }
 
-    public convert(): string[][] {
-
+    public convert(): string[] {
         if(!this.numberForConverting || this.numberForConverting.length === 1) {
             return [];
         }
 
-        // @ts-ignore
-        let cartesianArr = this.cartesian(this.getNumbersParts());
-        // @ts-ignore
-        return cartesianArr.map((charArr: string[]) => charArr.join(""));
+        let output: string[] = [];
+        this.cartesianProduct(this.getNumbersParts(), output);
+
+        return output;
     }
 
-    private cartesian(parts: string[][]) {
-        // @ts-ignore
-        let f = (a, b) => [].concat(...a.map(a => b.map(b => [].concat(a, b))));
-        // @ts-ignore
-        let cartesian = (a, b, ...c) => b ? cartesian(f(a, b), ...c) : a;
-        // @ts-ignore
-        return cartesian(...parts);
+
+    public cartesianProduct(parts: string[][], output: string[]) {
+        let i, j, l, m, a1, o = [];
+        if (!parts || parts.length == 0) return parts;
+
+        a1 = parts.splice(0, 1)[0];
+        parts = this.cartesianProduct(parts, output);
+
+        for (i = 0, l = a1.length; i < l; i++) {
+            if (parts && parts.length) for (j = 0, m = parts.length; j < m; j++) {
+                o.push([a1[i]].concat(parts[j]));
+                const finaleValue = a1[i]+parts[j].join("");
+                output.push(finaleValue);
+            }
+            else {
+                o.push([a1[i]]);
+            }
+        }
+        return o;
+    }
+
+    public findRealWorlds(): string[] {
+        let pattern = "^";
+        let regExpKeys: {[key: number]: string} = {};
+
+        Object.entries(ConvertorNumbersToCharacters.keyboard).forEach(([key,value]) => {
+            regExpKeys[key as any] = "(" + value.join("|") + ")";
+        });
+
+        this.numberForConverting.split("").forEach(number => {
+            // @ts-ignore
+            pattern += regExpKeys[Number(number)];
+        })
+
+        pattern += "$"
+
+        const words: string[] = [];
+        this.words.forEach(word => {
+            if (RegExp(pattern).test(word)) {
+                words.push(word)
+            }
+        })
+
+        return words
     }
 
 

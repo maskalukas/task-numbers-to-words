@@ -1,3 +1,4 @@
 export interface ICallService {
-    convertNumbersToCharacters(numbers: string): Promise<any>;
+    convertNumbersToCharactersWithoutFilter(numbers: string): string[];
+    convertNumbersToCharactersWithFilter(numbers: string): string[];
 }

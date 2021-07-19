@@ -11,7 +11,7 @@ const initRouters = () => {
     const callController = new CallController(callService);
 
     router.get("/:numbers/withfilter", callController.getCharactersFromNumbersWithFilter.bind(callController));
-    router.get("/:numbers/nofilter", callController.getCharactersFromNumbersWithouFilter.bind(callController));
+    router.get("/:numbers/nofilter", callController.getCharactersFromNumbersWithoutFilter.bind(callController));
 }
 initRouters();
 
