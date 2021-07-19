@@ -1,9 +1,17 @@
+/**
+ * Service that containes concrete api methods for calling.
+ */
 export interface ICallService {
-    callWithoutFilter(numbers: string): Promise<IApiRequest<any>>;
-    callWithFilter(numbers: string): Promise<IApiRequest<any>>;
+    /**
+     * Sends request for converting numbers to words without a filter.
+     * @param numbers = Numbers for converting.
+     */
+    callWithoutFilter(numbers: string): Promise<string[]>;
+    /**
+     * Sends request for converting numbers to words with a filter.
+     * @param numbers = Numbers for converting.
+     */
+    callWithFilter(numbers: string): Promise<string[]>;
 }
 
-export interface IApiRequest<T> {
-    controller: AbortController;
-    response: T;
-}
+

@@ -4,9 +4,7 @@ import {TAirplaneReducerProps} from "../types";
  * The initial store for data of the airplane mode.
  */
 export const airplaneReducerInitial: TAirplaneReducerProps = {
-    /**
-     * If it is the airplane mode on.
-     */
+    /** @inheritDoc */
     status: false
 }
 

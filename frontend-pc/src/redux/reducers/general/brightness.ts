@@ -6,10 +6,7 @@ import {TBrightnessReducerProps} from "../types";
  * The initial store for data of the brightness.
  */
 export const brightnessReducerInitial: TBrightnessReducerProps = {
-    /**
-     * Current brightness.
-     * Number that is passed into a css style.
-     */
+    /** @inheritDoc */
     number: 1
 }
 

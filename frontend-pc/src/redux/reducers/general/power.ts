@@ -5,9 +5,7 @@ import {TPowerReducerProps} from "../types";
  * The initial store for data of power state.
  */
 export const powerReducerInitial: TPowerReducerProps = {
-    /**
-     * If the phone is on or off.
-     */
+    /** @inheritDoc */
     status: true
 }
 

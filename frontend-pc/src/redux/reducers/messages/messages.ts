@@ -6,18 +6,13 @@ import {PayloadAction} from "@reduxjs/toolkit";
  * The initial store for data of messages.
  */
 export const messagesReducerInitial: TMessagesState = {
-    /**
-     * List of all messages.
-     */
+    /** @inheritDoc */
     messages: [],
-    /**
-     * List of new message identifiers.
-     */
+
+    /** @inheritDoc */
     newMessagesIds: [],
-    /**
-     * Current counter of messages.
-     * It serves as an id for messages.
-     */
+
+    /** @inheritDoc */
     counterMessages: 0
 }
 

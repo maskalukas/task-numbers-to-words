@@ -6,18 +6,13 @@ import {TBatteryReducerProps} from "../types";
  * The initial store for data of the battery.
  */
 export const batteryReducerInitial: TBatteryReducerProps = {
-    /**
-     * The phone is currently charging.
-     */
+    /** @inheritDoc */
     isCharging: false,
-    /**
-     * Current state of the battery.
-     */
+
+    /** @inheritDoc */
     statusNumber:10,
-    /**
-     * If it is displayed the no battery icon.
-     * It will appear when the statusNumber reaches to 0.
-     */
+
+    /** @inheritDoc */
     isShowedNoBatteryIcon: false
 }
 

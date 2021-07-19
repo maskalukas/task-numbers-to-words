@@ -5,11 +5,7 @@ import {TVolumeReducerProps} from "../types";
  * The initial store for data of volume.
  */
 export const volumeReducerInitial: TVolumeReducerProps = {
-    /**
-     * If the volume is on or off.
-     * Accordingly to that, then it is possibly
-     * hear sound of new messages and clicking on the keyboard.
-     */
+    /** @inheritDoc */
     status: true
 }
 

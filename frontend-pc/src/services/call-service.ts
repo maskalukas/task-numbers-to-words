@@ -1,19 +1,23 @@
 import {ApiService} from "./api-service";
-import {IApiRequest, ICallService} from "./interfaces";
+import {ICallService} from "./interfaces";
 
+/**
+ * @inheritDoc
+ */
 export class CallService extends ApiService implements ICallService {
-
 
     public constructor() {
         super();
-        this.appendUrl("/call/")
+        this.appendUrl("call/")
     }
 
-    public callWithoutFilter(numbers: string): Promise<IApiRequest<any>> {
+    /** @inheritDoc */
+    public callWithoutFilter(numbers: string): Promise<string[]> {
         return this.GET(numbers + "/nofilter");
     }
 
-    public callWithFilter(numbers: string): Promise<IApiRequest<any>> {
+    /** @inheritDoc */
+    public callWithFilter(numbers: string): Promise<string[]> {
         return this.GET(numbers + "/withfilter");
     }
 
