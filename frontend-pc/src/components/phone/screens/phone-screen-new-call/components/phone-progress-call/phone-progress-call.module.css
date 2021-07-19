@@ -1,0 +1,60 @@
+.phoneCallProgressBackground {
+  position: absolute;
+  height: 100%;
+  background: #000000e8;
+  top: 0;
+  width: 100%;
+  border-bottom-left-radius: 25px;
+  -webkit-border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  -webkit-border-bottom-right-radius: 25px;
+  z-index: 1000000;
+}
+
+.phoneCallCancelButton {
+  font-size: 37px;
+  background: #bc2525;
+  padding: 11px;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  color: #490b0b !important;
+  cursor: pointer;
+  transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  position: absolute;
+  bottom: 113px;
+  left: 50%;
+  transform: translate(-50%, -7px);
+  -moz-transform: translate(-50%, -7px);
+  -o-transform: translate(-50%, -7px);
+  -ms-transform: translate(-50%, -7px);
+}
+.phoneCallCancelButton:hover {
+  transform: translate(-50%, -7px) scale(1.05);
+  -moz-transform: translate(-50%, -7px) scale(1.05);
+  -o-transform: translate(-50%, -7px) scale(1.05);
+  -ms-transform: translate(-50%, -7px) scale(1.05);
+}
+
+.phoneCallProgressNumberBox {
+  color: #fff;
+  font-weight: 700;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background: #323232;
+  padding: 18px 28px;
+  border-radius: 18px;
+  -moz-border-radius: 18px;
+  -webkit-border-radius: 18px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=phone-progress-call.module.css.map */

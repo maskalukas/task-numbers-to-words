@@ -6,7 +6,8 @@ import {CallService} from "../services/call-service";
 import {TCallsState, TGeneralState, TMessagesState} from "../redux/interfaces";
 import {Messages} from "./message";
 import Sound from "./sound";
-import {ICallService} from "../services/interfaces";
+import {IApiRequest, ICallService} from "../services/interfaces";
+import {CallAbort} from "../services/call-abort";
 
 export class Call implements ICall {
 
@@ -32,13 +33,13 @@ export class Call implements ICall {
         this.number = inputNumber;
     }
 
-    public call(filter: boolean){
+    public call(filter: boolean): Promise<IApiRequest<any>> | undefined {
         if(this.number && !this.generalState.airplane.status) {
             this.dispatch(callsStoreActions.callProgres.call());
             this.dispatch(callsStoreActions.callHistory.addCall(this.number));
 
             const callService: ICallService = new CallService();
-            let callServicePromise: Promise<string[]>;
+            let callServicePromise: Promise<IApiRequest<any>>;
 
             if(filter) {
                 callServicePromise = callService.callWithFilter(this.number)
@@ -46,18 +47,28 @@ export class Call implements ICall {
                 callServicePromise = callService.callWithoutFilter(this.number);
             }
 
-            callServicePromise.then((response) => {
-                console.log("Response:", response);
+            return callServicePromise.then((response) => {
+                console.log(response);
+                console.log("Response:", response.response);
                 const sms: IMessage = new Messages(this.messagesState, this.dispatch);
-                sms.addNewMessage(response, this.number as string);
+                sms.addNewMessage(response.response, this.number as string);
 
                 const sound: ISound = new Sound(this.generalState.volume, "sms-short.mp3");
                 sound.runSound();
+
+                this.dispatch(callsStoreActions.callProgres.cancelCall());
+
+                return response;
             });
         }
 
+        return undefined;
     }
 
+    public cancelCall(): void {
+        this.dispatch(callsStoreActions.callProgres.cancelCall());
+        CallAbort.getSingleton().abortRequest();
+    }
 
 
 }

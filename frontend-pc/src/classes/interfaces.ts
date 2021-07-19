@@ -1,6 +1,7 @@
 import {Dispatch} from "redux";
 import {TMessageItem} from "../redux/reducers/types";
 import {TMessagesListType, TMessagesState} from "../redux/interfaces";
+import {IApiRequest} from "../services/interfaces";
 
 export type TBatteryPartsNames = "battery-empty"|"battery-quarter"|"battery-half"|"battery-three-quarters"|"battery-full";
 
@@ -18,7 +19,8 @@ export interface IBattery {
 
 export interface ICall {
     setNumber(inputNumber: string): void;
-    call(filter: boolean): void;
+    call(filter: boolean): Promise<IApiRequest<any>> | undefined;
+    cancelCall(): void;
 }
 
 export interface IMessage {

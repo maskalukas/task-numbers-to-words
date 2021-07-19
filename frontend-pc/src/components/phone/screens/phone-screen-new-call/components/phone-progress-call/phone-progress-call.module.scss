@@ -1,0 +1,43 @@
+@import "../../../../../../../scss/mixins";
+
+.phoneCallProgressBackground {
+  position: absolute;
+  height: 100%;
+  background: #000000e8;
+  top: 0;
+  width: 100%;
+  @include borderBottomLeftRadius(25px);
+  @include borderBottomRightRadius(25px);
+  z-index: 1000000;
+}
+
+.phoneCallCancelButton {
+  font-size: 37px;
+  background: #bc2525;
+  padding: 11px;
+  @include borderRadius(20px);
+  color: #490b0b !important;
+  cursor: pointer;
+  @include transition(0.5s);
+  position: absolute;
+  bottom: 113px;
+  left: 50%;
+  @include transform(translate(-50%, -7px));
+
+  &:hover {
+    @include transform(translate(-50%, -7px) scale(1.05));
+  }
+}
+
+.phoneCallProgressNumberBox {
+  color: #fff;
+  font-weight: 700;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  @include transform(translate(-50%, -50%));
+  background: #323232;
+  padding: 18px 28px;
+  @include borderRadius(18px);
+  text-align: center;
+}
