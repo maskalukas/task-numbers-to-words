@@ -1,6 +1,6 @@
 import {
     TAirplaneReducerProps, TBatteryReducerProps,
-    TBrightnessReducerProps, TCallHistoryItem, TCallProgressReducerProps, TMessageItem,
+    TBrightnessReducerProps,  TCallProgressReducerProps, TMessageItem,
     TPowerReducerProps,
     TVolumeReducerProps
 } from "./reducers/types";
@@ -16,7 +16,6 @@ export type TGeneralState = {
 
 export type TCallsState = {
     callProgress: TCallProgressReducerProps
-    history: TCallHistoryItem[];
 }
 
 export type TMessagesState = {

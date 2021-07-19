@@ -28,12 +28,7 @@ export type TCallProgressReducerProps = {
     status: boolean;
 }
 
-export type TCallHistoryReducerProps = TCallHistoryItem[];
 
-export type TCallHistoryItem = {
-    number: string;
-    time: string;
-}
 
 export type TMessageItem = {
     id?: number;

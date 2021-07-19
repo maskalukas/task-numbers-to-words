@@ -39,6 +39,8 @@ const generalPhoneSlice = createSlice({
     }
 });
 
+
+
 export const generalStoreActions  = {
     battery: {
         setIsChargingOn: generalPhoneSlice.actions.batterySetIsChargingOn,
