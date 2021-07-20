@@ -14,9 +14,17 @@ api GET:
         GET: /v1/call/:numbers/withfilter
 
 <div style="font-size: 8px">
- <p>backend: nodejs</p>
-<p>frontend-pc: chrome</p>
-<p>frontend-phone: android</p>
+<b>backend: nodejs</b>
+<b>frontend-pc: chrome</b>
+ -  Features: 
+        charging (move up and down), 
+        top bar:
+                - It is possible after a click expand the top bar.
+                - It is possible click on sms box in the top bar and redirect on a message detail.
+                - Next features: sound, airplane mode, power, brightness
+        
+        
+<b>frontend-phone: android</b>
 </div>
 
 
