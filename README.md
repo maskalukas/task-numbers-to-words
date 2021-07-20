@@ -13,9 +13,11 @@ api GET:
     - Transfer of number with filter.
         GET: /v1/call/:numbers/withfilter
 
+<div style="font-size: 8px">
+ <p>backend: nodejs</p>
+<p>frontend-pc: chrome</p>
+<p>frontend-phone: android</p>
+</div>
 
-backend: nodejs
-frontend-pc: chrome
-frontend-phone: android
 
 
