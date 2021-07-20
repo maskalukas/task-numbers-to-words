@@ -1,3 +1,8 @@
+
+<img src="https://github.com/maskalukas/task-numbers-to-words/blob/main/PHONE_ON_CHROME.PNG" width="150px">
+<img src="https://github.com/maskalukas/task-numbers-to-words/blob/main/ANDROID.jpg" width="150px">
+
+
 **Docker**
 1) git clone https://github.com/maskalukas/task-numbers-to-words.git
 2) docker-compose -f docker-compose.yml up --build
