@@ -5,7 +5,9 @@ import {CallService} from "../services/call-service";
 
 const router = express.Router();
 
-
+/**
+ * Routes for calls
+ */
 const initRouters = () => {
     const callService: ICallService = new CallService();
     const callController = new CallController(callService);
