@@ -40,8 +40,8 @@ export class ConvertorNumbersToCharacters {
         if(this.filter) {
             // load file with real words
             try {
-                console.log(__dirname);
-                this.words = readFileSync("./src/src/words-list/list.txt", "utf-8").split("\n");                
+           
+                this.words = readFileSync(__dirname + "/list.txt"", "utf-8").split("\n");                
             } catch (err) {
                 console.log(err);
             }
