@@ -39,7 +39,11 @@ export class ConvertorNumbersToCharacters {
 
         if(this.filter) {
             // load file with real words
-            this.words = readFileSync("./words-list/list.txt", "utf-8").split("\n");
+            try {
+                this.words = readFileSync("./words-list/list.txt", "utf-8").split("\n");
+            } catch (err) {
+                console.log(err);
+            }
         }
     }
 
@@ -58,29 +62,36 @@ export class ConvertorNumbersToCharacters {
     /**
      * Converts numbers to real words
      */
-    public convertWithRealWords(): string[] {
-        let pattern = "^";
-        let regExpKeys: {[key: number]: string} = {};
+    public convertWithRealWords(sourceArray: string[] | undefined = undefined): string[] {
+        const keypad = {
+            2: "(a|b|c)",
+            3: "(d|e|f)",
+            4: "(g|h|i)",
+            5: "(j|k|l)",
+            6: "(m|n|o)",
+            7: "(p|q|r|s)",
+            8: "(t|u|v)",
+            9: "(w|x|y|z)",
+        }
 
-        Object.entries(ConvertorNumbersToCharacters.keyboard).forEach(([key,value]) => {
-            regExpKeys[key as any] = "(" + value.join("|") + ")";
-        });
+        const allWords: string[] = sourceArray ? sourceArray : this.words;
+        const resultWords: string[] = [];
+        let wordPattern = "^"
 
         this.numberForConverting.split("").forEach(number => {
             // @ts-ignore
-            pattern += regExpKeys[Number(number)];
+            wordPattern += keypad[number]
         })
 
-        pattern += "$";
+        wordPattern += "$";
 
-        const words: string[] = [];
-        this.words.forEach(word => {
-            if (RegExp(pattern).test(word)) {
-                words.push(word)
+        allWords.forEach((word: string) => {
+            if (RegExp(wordPattern).test(word)) {
+                resultWords.push(word)
             }
         })
 
-        return words
+        return resultWords;
     }
 
     /**
