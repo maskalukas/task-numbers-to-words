@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  node:
+    build:
+      context: ./backend
+    ports:
+      - 8000:8000
+  react:
+    build:
+      context: ./frontend-pc
+    ports:
+    - 3000:3000
