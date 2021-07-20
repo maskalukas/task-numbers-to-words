@@ -1,0 +1,59 @@
+.callButton {
+  font-size: 37px;
+  background: #5ab782;
+  padding: 11px;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  color: #152c1f;
+  cursor: pointer;
+  transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+.callButton:hover {
+  transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+}
+
+.callButtonsLine {
+  display: flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+  margin-top: 20px;
+  align-items: center;
+  -webkit-align-items: center;
+}
+
+.filterActivated {
+  background-color: #cddc39 !important;
+  color: #4b5017 !important;
+}
+
+.filterCheck {
+  background: #e8e8e8;
+  padding: 13px 18px;
+  color: #686868;
+  height: 25px;
+  width: 25px;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  margin-left: 25px;
+  cursor: pointer;
+  transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+.filterCheck:hover {
+  transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+}
+
+/*# sourceMappingURL=phone-screen-new-call.module.css.map */
