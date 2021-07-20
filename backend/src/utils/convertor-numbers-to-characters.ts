@@ -41,7 +41,7 @@ export class ConvertorNumbersToCharacters {
             // load file with real words
             try {
            
-                this.words = readFileSync(__dirname + "/list.txt"", "utf-8").split("\n");                
+                this.words = readFileSync(__dirname + "/list.txt", "utf-8").split("\n");                
             } catch (err) {
                 console.log(err);
             }
