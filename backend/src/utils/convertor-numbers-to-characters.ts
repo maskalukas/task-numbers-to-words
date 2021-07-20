@@ -1,5 +1,4 @@
-import {  readFileSync } from 'fs';
-
+import words from "../words-list/words.json";
 /**
  * The convertor from numbers to words
  */
@@ -40,7 +39,7 @@ export class ConvertorNumbersToCharacters {
         if(this.filter) {
             // load file with real words
             try {
-                this.words = readFileSync("./words-list/list.txt", "utf-8").split("\n");
+                this.words = words;
             } catch (err) {
                 console.log(err);
             }
@@ -89,7 +88,7 @@ export class ConvertorNumbersToCharacters {
             if (RegExp(wordPattern).test(word)) {
                 resultWords.push(word)
             }
-        })
+        });
 
         return resultWords;
     }
