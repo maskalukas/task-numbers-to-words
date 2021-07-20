@@ -82,7 +82,7 @@ export interface IMessage {
      * @param response = The converted words.
      * @param number = The number that was used for converting.
      */
-    addNewMessage(response: string, number: string): void;
+    addNewMessage(response: string[], number: string): void;
 
     /**
      * Returns some message by its id.

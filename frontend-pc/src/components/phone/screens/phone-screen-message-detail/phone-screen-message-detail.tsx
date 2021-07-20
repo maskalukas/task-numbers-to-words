@@ -38,6 +38,8 @@ export const PhoneScreenMessageDetail = (props: RouteComponentProps<TMessageDeta
 
         setMessageItem(message.getMessage(messageIdNumber));
         message.markMessageAsRead(messageIdNumber);
+
+        console.log(message.getMessage(messageIdNumber), messagesState);
     },[messageItem]);
 
     return (

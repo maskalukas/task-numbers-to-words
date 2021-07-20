@@ -21,7 +21,7 @@ export abstract class ApiService {
         return fetch(this.baseUrl + url, {
             method: "GET",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "text/plain"
             },
             signal: callSingleton.getController()?.signal
         }).then((res: any) => {

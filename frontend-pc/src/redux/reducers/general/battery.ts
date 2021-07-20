@@ -10,7 +10,7 @@ export const batteryReducerInitial: TBatteryReducerProps = {
     isCharging: false,
 
     /** @inheritDoc */
-    statusNumber:10,
+    statusNumber: 20,
 
     /** @inheritDoc */
     isShowedNoBatteryIcon: false

@@ -18,7 +18,7 @@ export class Messages implements IMessage {
     }
 
     /** @inheritDoc */
-    public addNewMessage(response: any, number: string): void {
+    public addNewMessage(response: string[], number: string): void {
         this.dispatch(messagesStoreActions.messages.addMessage({ number: number, response: response }));
         this.dispatch(messagesStoreActions.messages.addMessageIds(this.messagesState.counterMessages+1));
         this.dispatch(messagesStoreActions.messages.incrementCounter());

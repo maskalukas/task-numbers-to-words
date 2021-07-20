@@ -6,7 +6,7 @@ import {TPowerReducerProps} from "../types";
  */
 export const powerReducerInitial: TPowerReducerProps = {
     /** @inheritDoc */
-    status: true
+    status: false
 }
 
 /**

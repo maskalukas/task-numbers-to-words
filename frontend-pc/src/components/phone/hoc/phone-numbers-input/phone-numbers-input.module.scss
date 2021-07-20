@@ -15,6 +15,7 @@
   @include borderRadius(10px);
   @include boxSizing(border-box);
   outline: none;
+  text-align: center;
 }
 
 input[type='number'] {

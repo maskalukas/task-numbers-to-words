@@ -9,7 +9,9 @@ import { phoneContentId } from "../../../constants/elements-ids";
 import {PhoneContentBatteryChange} from "./components/battery/phone-content-battery-change/phone-content-battery-change";
 import {BrowserRouter} from "react-router-dom";
 
-
+/**
+ * The main content
+ */
 const PhoneContent = () => {
     const phoneGeneralState: TGeneralState = useSelector((state: IReducersState) => state.generalState);
 

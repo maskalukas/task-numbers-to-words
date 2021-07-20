@@ -59,7 +59,7 @@ export class Call implements ICall {
 
                 // save the message
                 const sms: IMessage = new Messages(this.messagesState, this.dispatch);
-                sms.addNewMessage(response.join(""), this.number as string);
+                sms.addNewMessage(response, this.number as string);
 
                 // trigger sms sound
                 const sound: ISound = new Sound(this.generalState.volume, "sms-short.mp3");

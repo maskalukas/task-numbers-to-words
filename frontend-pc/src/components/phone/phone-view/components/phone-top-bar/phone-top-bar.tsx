@@ -20,12 +20,18 @@ const getCurrentTime = (): string => {
     return CurrentDate.getHours() + ":" + CurrentDate.getMinutes();
 }
 
+/**
+ * Completely upper bar
+ */
 const PhoneTopBar = () => {
     const topBarHeightDefault = 17;
-
-    const [expanded, setExpanded] = useState(false);
+    // new height
     const [height, setHeight] = useState(topBarHeightDefault);
+    // if the top bar is expanded
+    const [expanded, setExpanded] = useState(false);
+    // if the content is show after the top bar is expanded
     const [contentShowed, setContentShowed] = useState(false);
+    // current time
     const [time, setTime] = useState(getCurrentTime());
 
     const phoneGeneralState: TGeneralState = useSelector((state: IReducersState) => state.generalState);
@@ -36,18 +42,24 @@ const PhoneTopBar = () => {
         const battery = new Battery(phoneGeneralState.battery, dispatch);
 
         const interval = setInterval(() => {
+            // setting the time
             setTime(getCurrentTime());
-            // battery.dischargeBattery();
+            // dicharging of the battery
+            battery.dischargeBattery();
         }, 1000);
 
         return () => clearInterval(interval);
     }, [time,phoneGeneralState.battery.isCharging, phoneGeneralState.battery.statusNumber]);
 
 
+    /**
+     * Click on the top bar and that will expand it
+     */
     const onMouseDown = () => {
         if(!expanded) {
             setHeight(120);
             setExpanded(true);
+            // timeout is here due to animation
             const timeout = setTimeout(() => {
                 setContentShowed(true);
                 clearTimeout(timeout);
@@ -59,6 +71,9 @@ const PhoneTopBar = () => {
         }
     }
 
+    /**
+     * Change state of the airplane mode.
+     */
     const airplaneChangeState = (e: any) => {
         const newAirplaneState = !phoneGeneralState.airplane.status;
         if(newAirplaneState) {
@@ -68,6 +83,9 @@ const PhoneTopBar = () => {
         }
     }
 
+    /**
+     * Change state of the volume.
+     */
     const volumeChangeState = (e: any) => {
         const newVolumeState = !phoneGeneralState.volume.status;
         if (newVolumeState) {
@@ -78,7 +96,6 @@ const PhoneTopBar = () => {
     }
 
     const isFirstRun = useRef(true);
-
     useEffect (() => {
         if (isFirstRun.current) {
             isFirstRun.current = false;
