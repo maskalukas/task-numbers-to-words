@@ -15,8 +15,11 @@ api GET:
 
 <div style="font-size: 8px">
 <b>backend: nodejs</b>
+        
 <b>frontend-pc: chrome</b>
+        
  -  Features: 
+        
         - charging (move up and down), 
         - top bar:
                 - It is possible after a click expand the top bar.
