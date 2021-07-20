@@ -24,6 +24,9 @@ const styles = StyleSheet.create({
 
 const contentHeight = (Dimensions.get("window").height - 540);
 
+/**
+ * The main content
+ */
 const Content = (props: { response: string[] }) => {
     return (
         <View style={ styles.content }>

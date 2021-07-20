@@ -27,8 +27,14 @@ const styles = StyleSheet.create({
     }
 })
 
+/**
+ * Keyboard button
+ */
 const KeyboardButton = (props: { button: TButtonItem, callback: Function  }) => {
 
+    /**
+     * Click on some button
+     */
     const onClickButton = (e: any) => {
         props.callback(props.button.value);
     }

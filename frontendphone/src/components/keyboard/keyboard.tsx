@@ -1,11 +1,18 @@
 import React from "react";
 import {StyleSheet, Text, TextInput, View} from "react-native";
 import KeyboardButton from "./keyboard-button";
+
+/**
+ * Button type
+ */
 export type TButtonItem = {
     value: number;
     chars: string|null;
 }
 
+/**
+ * The list of keyboard buttons
+ */
 const buttons: TButtonItem[]  = [{
     value: 1,
     chars: null
@@ -46,10 +53,11 @@ const styles = StyleSheet.create({
 })
 
 
-
+/**
+ * Keyboard
+ * @param props = callback = callback is called when some button is clicked.
+ */
 const Keyboard = (props: { callback: Function }) => {
-
-
     return (
         <View style={styles.keyboard}>
             {

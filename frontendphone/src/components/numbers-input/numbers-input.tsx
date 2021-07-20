@@ -14,6 +14,9 @@ const styles = StyleSheet.create({
     }
 })
 
+/**
+ * Shows the clicked numbers
+ */
 export const NumbersInput = (props: { numbers: string }) => {
 
     return (
