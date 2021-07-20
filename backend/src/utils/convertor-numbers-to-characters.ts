@@ -39,7 +39,7 @@ export class ConvertorNumbersToCharacters {
 
         if(this.filter) {
             // load file with real words
-            this.words = readFileSync("./words-list/list.txt", "utf8").split("\n");
+            this.words = readFileSync("./words-list/list.txt", "utf-8").split("\n");
         }
     }
 
@@ -62,16 +62,16 @@ export class ConvertorNumbersToCharacters {
         let pattern = "^";
         let regExpKeys: {[key: number]: string} = {};
 
-        // creation of regexp keys from the keyboard
         Object.entries(ConvertorNumbersToCharacters.keyboard).forEach(([key,value]) => {
             regExpKeys[key as any] = "(" + value.join("|") + ")";
         });
 
         this.numberForConverting.split("").forEach(number => {
+            // @ts-ignore
             pattern += regExpKeys[Number(number)];
         })
 
-        pattern += "$"
+        pattern += "$";
 
         const words: string[] = [];
         this.words.forEach(word => {
@@ -80,7 +80,7 @@ export class ConvertorNumbersToCharacters {
             }
         })
 
-        return words;
+        return words
     }
 
     /**
