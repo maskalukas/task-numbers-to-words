@@ -1,8 +1,11 @@
 import express  from 'express';
-import callRoutes from "./routes/call-routes"
+import callRoutes from "./routes/call-routes";
+import path from "path";
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
 
 const app = express();
-const port = 8000;
+const port = process.env.PORT;
+
 
 app.listen(port,() => {
     console.log("The server is running.");
