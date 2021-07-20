@@ -4,12 +4,13 @@
 -------------------------------------------------------------------------
 client: localhost:3000
 server: localhost:8000
-
-api GET:    
         
-    - Převod čísla bez filtru
+api GET:    
+
+    - Transfer of number without filter.
         GET: /v1/call/:numbers/nofilter
-    - Převod čísla s filtrem
+
+    - Transfer of number with filter.
         GET: /v1/call/:numbers/withfilter
 
 
