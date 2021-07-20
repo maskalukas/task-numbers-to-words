@@ -9,6 +9,7 @@
   -moz-transition: 0.5s;
   -o-transition: 0.5s;
   -webkit-transition: 0.5s;
+  z-index: 1;
 }
 .phoneTopBar > * {
   color: #3f3f3f;
