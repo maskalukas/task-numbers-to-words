@@ -68,11 +68,13 @@ export class Battery implements IBattery {
 
     /** @inheritDoc */
     public chargeBattery(): any {
-        const interval = setInterval(() => {
-            this.dispatch(generalStoreActions.battery.increaseNumberByOne());
-        },1000)
+        if(this.batteryState.statusNumber < 100) {
+            const interval = setInterval(() => {
+                this.dispatch(generalStoreActions.battery.increaseNumberByOne());
+            },1000)
 
-        return () => clearInterval(interval);
+            return () => clearInterval(interval);
+        }
     }
 
     /** @inheritDoc */
